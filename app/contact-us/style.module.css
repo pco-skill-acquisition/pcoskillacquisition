@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply min-h-screen flex flex-col items-center justify-center bg-[var(--primary)] text-[var(--secondary-white)] px-4 py-12;
+}
+
+.hero {
+  @apply rounded-lg mb-6 w-full max-w-3xl object-cover animate-fade-in;
+}
+
+.title {
+  @apply text-3xl sm:text-5xl font-extrabold mb-4 text-center leading-tight animate-slide-up;
+}
+
+.text {
+  @apply text-base sm:text-lg max-w-2xl text-center mb-8 animate-slide-up delay-100;
+}
+
+.form {
+  @apply flex flex-col space-y-4 max-w-lg w-full;
+}
+
+.input,
+.textarea {
+  @apply px-4 py-2 rounded-md bg-[var(--secondary-white)] text-[var(--primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)];
+}
+
+.textarea {
+  @apply h-32;
+}
+
+.cta {
+  @apply px-8 py-3 bg-[var(--accent)] text-[var(--primary)] rounded-full font-semibold hover:bg-yellow-400 transition-colors duration-200 text-sm sm:text-base shadow-md animate-slide-up delay-200;
+}
