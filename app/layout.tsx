@@ -1,10 +1,10 @@
-import Link from 'next/link';
+import Navbar from './components/Navbar';
 import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'PCO Skill Acquisition',
-  description: 'Naija’s top hub for mastering skills that shine!',
+  description: 'Naija’s dopest hub for mastering skills that shine!',
 };
 
 export default function RootLayout({
@@ -18,36 +18,14 @@ export default function RootLayout({
         <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet" />
       </head>
       <body className="font-gilroy">
-        <header className="bg-deep-navy text-secondary-white p-4 sticky top-0 z-10 shadow-md">
-          <nav className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
-            <h1 className="text-xl sm:text-2xl font-extrabold mb-2 sm:mb-0">PCO Skills</h1>
-            <ul className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-sm sm:text-base">
-              <li>
-                <Link href="/" className="hover:text-accent transition-colors duration-200">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/courses" className="hover:text-accent transition-colors duration-200">
-                  Courses
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-accent transition-colors duration-200">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-accent transition-colors duration-200">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <Navbar />
         <main className="container mx-auto p-4">{children}</main>
-        <footer className="bg-deep-navy text-secondary-white p-4 text-center text-sm sm:text-base">
-          <p>© 2025 PCO Skill Acquisition. Naija’s finest skill hub!</p>
+        <footer className="bg-deep-navy text-secondary-white p-6 text-center text-sm sm:text-base shadow-inner">
+          <p className="mb-2">© 2025 PCO Skill Acquisition. Naija’s finest skill hub!</p>
+          <div className="flex justify-center space-x-4">
+            <a href="/our-vision" className="hover:text-accent transition-colors duration-200">Our Vision</a>
+            <a href="/contact-us" className="hover:text-accent transition-colors duration-200">Get in Touch</a>
+          </div>
         </footer>
       </body>
     </html>
