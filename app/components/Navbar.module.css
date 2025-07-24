@@ -65,6 +65,7 @@
 
 .menuOpen {
   transform: translateX(0);
+  display: block !important; /* Force display on mobile toggle */
 }
 
 @media (max-width: 640px) {
@@ -166,14 +167,11 @@
   .dropdownMenu {
     display: none;
   }
-  .dropdown .dropdownButton {
-    position: relative;
-  }
-  .dropdown .menuOpen .dropdownMenu {
+  .dropdown .dropdownButton:active + .dropdownMenu {
     display: block;
     position: absolute;
-    top: 0;
-    left: 100%;
+    top: 100%;
+    left: 0;
     width: 200px;
   }
 }
