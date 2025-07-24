@@ -15,8 +15,8 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="PCO Skills Logo"
-            width={32}
-            height={10}
+            width={64}
+            height={20}
             className={styles.logo}
           />
         </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li className={styles.dropdown}>
-            <span className={styles.link}>Campus</span>
+            <span className={styles.link}>Campus ▼</span>
             <ul className={styles.dropdownMenu}>
               <li>
                 <Link href="/campus/apapa" className={styles.dropdownLink}>
