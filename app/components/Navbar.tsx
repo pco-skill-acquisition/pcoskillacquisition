@@ -15,8 +15,8 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="PCO Skills Logo"
-            width={64}
-            height={20}
+            width={80}
+            height={25}
             className={styles.logo}
           />
         </Link>
@@ -27,6 +27,11 @@ export default function Navbar() {
           ☰
         </button>
         <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
+          <li>
+            <Link href="/" className={styles.link}>
+              Home
+            </Link>
+          </li>
           <li>
             <Link href="/our-vision" className={styles.link}>
               Our Vision
