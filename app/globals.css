@@ -55,22 +55,6 @@ body {
   animation: pulse 2s infinite;
 }
 
-.animate-fade-in {
-  animation: fadeIn 1s ease-in;
-}
-
-.animate-slide-up {
-  animation: slideUp 0.5s ease-out;
-}
-
-.animate-slide-up.delay-100 {
-  animation-delay: 0.1s;
-}
-
-.animate-slide-up.delay-200 {
-  animation-delay: 0.2s;
-}
-
 @keyframes pulse {
   0%,
   100% {
@@ -79,38 +63,4 @@ body {
   50% {
     opacity: 0.8;
   }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Hover effects and shadows */
-button:hover,
-a:hover {
-  @apply transition duration-200 ease-in-out;
-}
-
-.shadow-md {
-  @apply shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)];
-}
-
-.shadow-inner {
-  @apply shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.06)];
 }
