@@ -43,7 +43,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li className={styles.dropdown}>
-            <button className={styles.dropdownButton}>Campus ▼</button>
+            <button className={styles.dropdownButton}>Campus ⋁</button>
             <ul className={styles.dropdownMenu}>
               <li>
                 <Link href="/campus/apapa" className={styles.dropdownLink}>
