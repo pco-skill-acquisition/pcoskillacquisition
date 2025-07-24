@@ -135,11 +135,6 @@
   color: #002366;
 }
 
-.dropdownButton::after {
-  content: "↓";
-  font-size: 0.7rem;
-}
-
 .dropdownMenu {
   display: none;
   position: absolute;
