@@ -17,14 +17,14 @@ export default function RootLayout({
       <head>
         <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet" />
       </head>
-      <body className="font-gilroy">
+      <body>
         <Navbar />
-        <main className="container mx-auto p-4">{children}</main>
-        <footer className="bg-deep-navy text-secondary-white p-6 text-center text-sm sm:text-base shadow-inner">
-          <p className="mb-2">© 2025 PCO Skill Acquisition. Naija’s finest skill hub!</p>
-          <div className="flex justify-center space-x-4">
-            <a href="/our-vision" className="hover:text-accent transition-colors duration-200">Our Vision</a>
-            <a href="/contact-us" className="hover:text-accent transition-colors duration-200">Get in Touch</a>
+        <main className="container">{children}</main>
+        <footer style={{ backgroundColor: '#0B1F3A', color: '#FFFFFF', padding: '1.5rem', textAlign: 'center', fontSize: '0.875rem' }}>
+          <p style={{ marginBottom: '0.5rem' }}>© 2025 PCO Skill Acquisition. Naija’s finest skill hub!</p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+            <a href="/our-vision" style={{ color: '#FFFFFF', textDecoration: 'none', transition: 'color 0.2s ease' }}>Our Vision</a>
+            <a href="/contact-us" style={{ color: '#FFFFFF', textDecoration: 'none', transition: 'color 0.2s ease' }}>Get in Touch</a>
           </div>
         </footer>
       </body>
