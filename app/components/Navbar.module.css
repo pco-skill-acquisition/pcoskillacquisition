@@ -105,6 +105,7 @@
   border-radius: 4px;
   transition: color 0.2s ease;
   font-weight: bold;
+  font-size: inherit; /* Ensure inherited size */
 }
 
 .link:hover {
@@ -127,6 +128,7 @@
   transition: background-color 0.3s ease, color 0.2s ease;
   display: flex;
   align-items: center;
+  font-size: inherit; /* Match .link size */
 }
 
 .dropdownButton:hover {
