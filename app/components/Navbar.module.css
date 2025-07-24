@@ -59,15 +59,21 @@
   left: -100%;
   width: 250px;
   height: 100%;
-  display: none;
   color: #002366;
   transition: transform 0.3s ease;
 }
 
 .menuOpen {
-  display: block;
   transform: translateX(0);
-  animation: slideInLeft 0.3s ease-out;
+}
+
+@media (max-width: 640px) {
+  .menu {
+    display: none;
+  }
+  .menuOpen {
+    display: flex;
+  }
 }
 
 @media (min-width: 640px) {
@@ -105,7 +111,7 @@
   border-radius: 4px;
   transition: color 0.2s ease;
   font-weight: bold;
-  font-size: inherit; /* Ensure inherited size */
+  font-size: inherit;
 }
 
 .link:hover {
@@ -128,7 +134,7 @@
   transition: background-color 0.3s ease, color 0.2s ease;
   display: flex;
   align-items: center;
-  font-size: inherit; /* Match .link size */
+  font-size: inherit;
 }
 
 .dropdownButton:hover {
