@@ -1,9 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
-  @apply m-0 p-0 box-border font-gilroy;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy", sans-serif;
 }
 
 /* Custom color scheme */
@@ -16,51 +15,11 @@ body {
 
 /* Mobile-first responsive styles */
 .container {
-  @apply px-4;
+  padding: 1rem;
 }
 
 @media (min-width: 640px) {
   .container {
-    @apply px-6;
-  }
-}
-
-/* Apply custom colors */
-.bg-primary {
-  @apply bg-[var(--primary)];
-}
-
-.text-primary {
-  @apply text-[var(--primary)];
-}
-
-.bg-accent {
-  @apply bg-[var(--accent)];
-}
-
-.text-accent {
-  @apply text-[var(--accent)];
-}
-
-.bg-deep-navy {
-  @apply bg-[var(--deep-navy)];
-}
-
-.text-secondary-white {
-  @apply text-[var(--secondary-white)];
-}
-
-/* Animations */
-.animate-pulse-logo {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
+    padding: 1.5rem;
   }
 }
