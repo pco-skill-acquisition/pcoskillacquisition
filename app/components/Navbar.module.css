@@ -60,11 +60,10 @@
   width: 250px;
   height: 100%;
   color: #002366;
-  transition: transform 0.3s ease;
 }
 
 .menuOpen {
-  transform: translateX(0);
+  left: 0; /* Remove slide-in, just show */
   display: block !important; /* Force display on mobile toggle */
 }
 
@@ -196,16 +195,4 @@
 .dropdownLink:hover {
   background-color: #ffd700;
   color: #002366;
-}
-
-/* Animations */
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }
