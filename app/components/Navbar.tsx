@@ -38,7 +38,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li className={styles.dropdown}>
-            <span className={styles.link}>Campus ▼</span>
+            <span className={styles.link}>Campus ⋁</span>
             <ul className={styles.dropdownMenu}>
               <li>
                 <Link href="/campus/apapa" className={styles.dropdownLink}>
