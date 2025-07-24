@@ -127,14 +127,6 @@
   transition: background-color 0.3s ease, color 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  position: relative;
-}
-
-.dropdownButton::after {
-  content: "⋁";
-  font-weight: bold;
-  margin-left: 0.25rem;
 }
 
 .dropdownButton:hover {
