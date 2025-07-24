@@ -15,8 +15,8 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="PCO Skills Logo"
-            width={120}
-            height={40}
+            width={32}
+            height={10}
             className={styles.logo}
           />
         </Link>

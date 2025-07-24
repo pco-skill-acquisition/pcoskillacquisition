@@ -11,23 +11,23 @@
 }
 
 .logo {
-  @apply object-contain animate-pulse-logo;
+  @apply w-32 h-10 object-contain sm:w-24 sm:h-8 transition-all duration-200;
 }
 
 .toggle {
-  @apply sm:hidden text-[var(--accent)] focus:outline-none text-xl;
+  @apply sm:hidden text-[var(--accent)] focus:outline-none text-2xl;
 }
 
 .menu {
-  @apply flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-8 text-sm sm:text-base absolute sm:static top-16 left-0 w-full sm:w-auto bg-[var(--deep-navy)] sm:bg-transparent p-4 sm:p-0 hidden sm:flex;
+  @apply flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-sm sm:text-base absolute sm:static top-16 right-0 w-full sm:w-auto bg-[var(--deep-navy)] sm:bg-transparent p-4 sm:p-0 hidden sm:flex items-center;
 }
 
 .menuOpen {
-  @apply block;
+  @apply block animate-slide-down;
 }
 
 .link {
-  @apply hover:text-[var(--accent)] transition-colors duration-200 font-semibold;
+  @apply hover:text-[var(--accent)] transition-colors duration-200 font-semibold px-2 py-1 rounded;
 }
 
 .dropdown {
@@ -35,13 +35,25 @@
 }
 
 .dropdownMenu {
-  @apply absolute left-0 mt-2 w-48 bg-[var(--deep-navy)] text-[var(--secondary-white)] rounded-md shadow-lg hidden group-hover:block;
-}
-
-.dropdown:hover .dropdownMenu {
-  @apply block;
+  @apply absolute left-0 mt-2 w-48 bg-[var(--deep-navy)] text-[var(--secondary-white)] rounded-md shadow-lg hidden group-hover:block sm:group-hover:block;
 }
 
 .dropdownLink {
   @apply block px-4 py-2 hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200;
+}
+
+/* Animations */
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out;
 }
