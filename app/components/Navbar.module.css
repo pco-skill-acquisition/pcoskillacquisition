@@ -125,11 +125,19 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .dropdownButton:hover {
   background-color: #ffd700;
   color: #002366;
+}
+
+.dropdownButton::after {
+  content: "↓";
+  font-size: 0.7rem;
 }
 
 .dropdownMenu {
