@@ -57,13 +57,13 @@
   position: fixed;
   top: 0;
   left: -100%;
-  width: 250px;
+  width: 200px; /* Reduced from 250px */
   height: 100%;
   color: #002366;
 }
 
 .menuOpen {
-  left: 0; /* Remove slide-in, just show */
+  left: 0; /* No slide-in, just show */
   display: block !important; /* Force display on mobile toggle */
 }
 
