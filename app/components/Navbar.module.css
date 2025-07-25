@@ -68,7 +68,7 @@
 }
 
 .menuOpen {
-  right: 0; /* Slide in from right without blocking content */
+  right: 0; /* Slide in without blocking content */
 }
 
 @media (max-width: 640px) {
