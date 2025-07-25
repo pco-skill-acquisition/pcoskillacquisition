@@ -57,7 +57,7 @@
   position: fixed;
   top: 0;
   left: -100%;
-  width: 200px; /* Reduced from 250px */
+  width: 150px; /* Reduced from 200px */
   height: 100%;
   color: #002366;
 }
