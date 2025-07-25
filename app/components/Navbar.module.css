@@ -63,14 +63,12 @@
   height: 100%;
   border-radius: 10px 0 0 10px;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-  transform: scale(0.95) translateX(100%);
-  transition: transform 0.5s ease; /* Slower transition */
+  transition: right 0.3s ease;
   z-index: 15;
 }
 
 .menuOpen {
-  transform: scale(1) translateX(0); /* Scale up and slide in */
-  display: flex; /* Ensure menu shows on toggle */
+  right: 0; /* Slide in without blocking content */
 }
 
 @media (max-width: 640px) {
@@ -94,7 +92,6 @@
     padding: 0;
     display: flex;
     align-items: center;
-    margin-right: 0; /* Reset any shift */
   }
   .menu li {
     margin-left: 1.5rem;
