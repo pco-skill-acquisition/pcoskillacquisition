@@ -52,19 +52,19 @@
   flex-direction: column;
   list-style: none;
   margin: 0;
-  padding: 1rem;
+  padding: 0;
   background-color: #ffffff;
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 150px; /* Reduced from 200px */
-  height: 100%;
   color: #002366;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 150px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: none;
 }
 
 .menuOpen {
-  left: 0; /* No slide-in, just show */
-  display: block !important; /* Force display on mobile toggle */
+  display: block; /* Show dropdown above content */
 }
 
 @media (max-width: 640px) {
