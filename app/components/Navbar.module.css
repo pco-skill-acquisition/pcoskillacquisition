@@ -54,7 +54,7 @@
   list-style: none;
   margin: 0;
   padding: 1rem;
-  background: linear-gradient(135deg, #ffffff, #f5f7fa);
+  background: rgba(255, 255, 255, 0.8); /* Transparent background */
   color: #002366;
   position: fixed;
   top: 0;
@@ -153,7 +153,7 @@
   top: 100%;
   left: 0;
   width: 200px;
-  background: linear-gradient(135deg, #ffffff, #f5f7fa);
+  background: rgba(255, 255, 255, 0.8); /* Transparent background */
   color: #002366;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
