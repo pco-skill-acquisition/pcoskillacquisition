@@ -22,7 +22,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+}
+
+.buttonContainer {
+  display: flex;
   gap: 1rem;
 }
 
@@ -54,5 +57,10 @@
   .exploreButton {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
