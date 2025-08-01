@@ -5,6 +5,7 @@ export default function Home() {
     <main>
       <section className={styles.topSection}>
         <div className={styles.overlay}>
+          <h1 className={styles.title}>Pastor Chris Oyakhilome Skill Acquisition</h1>
           <div className={styles.buttonContainer}>
             <button className={styles.registerButton}>Register Now</button>
             <button className={styles.exploreButton}>Explore Campuses</button>
