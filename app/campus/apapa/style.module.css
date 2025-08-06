@@ -48,13 +48,22 @@
 
 .aboutSection {
   padding: 2rem 0;
-  background-color: #ffffff;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.95
+  ); /* Light background with slight opacity */
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  border: 2px solid #ffd700; /* Accent color border */
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .subtitle {
@@ -64,6 +73,12 @@
   color: #002366;
   text-align: center;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.subtitle:hover {
+  transform: scale(1.05);
+  color: #ffd700; /* Accent color on hover */
 }
 
 .aboutText {
@@ -74,6 +89,11 @@
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.aboutText:hover {
+  transform: scale(1.02);
 }
 
 @keyframes fadeIn {
@@ -94,6 +114,10 @@
 
   .title {
     font-size: 2rem;
+  }
+
+  .container {
+    padding: 1rem;
   }
 
   .subtitle {
