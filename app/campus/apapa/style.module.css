@@ -93,16 +93,33 @@
 
 .coursesSection {
   padding: 2rem 0;
-  background: url("/image13.jpg") no-repeat center center/cover;
-  position: relative;
 }
 
-.coursesSection .container {
-  background: rgba(255, 255, 255, 0.9); /* Overlay for readability */
+.coursesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: url("/image13.jpg") no-repeat center center/cover;
+  position: relative;
   border: 2px solid #ffd700;
   border-radius: 10px;
-  padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coursesContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9); /* Overlay for readability */
+  z-index: 0;
+}
+
+.coursesContainer > * {
+  position: relative;
+  z-index: 1;
 }
 
 .coursesList {

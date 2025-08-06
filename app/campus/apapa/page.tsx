@@ -15,7 +15,7 @@ export default function ApapaCampus() {
         </div>
       </section>
       <section className={styles.coursesSection}>
-        <div className={styles.container}>
+        <div className={styles.coursesContainer}>
           <h2 className={styles.subtitle}>Courses Available</h2>
           <ul className={styles.coursesList}>
             <li>Digital Marketing Mastery</li>
