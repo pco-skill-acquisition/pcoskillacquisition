@@ -26,6 +26,16 @@ export default function ApapaCampus() {
           </ul>
         </div>
       </section>
+      <section className={styles.eventsSection}>
+        <div className={styles.container}>
+          <h2 className={styles.subtitle}>Upcoming Events</h2>
+          <ul className={styles.eventsList}>
+            <li>Skill Expo 2025 - Aug 15, 2025</li>
+            <li>Coding Workshop - Aug 20, 2025</li>
+            <li>Entrepreneurship Talk - Aug 25, 2025</li>
+          </ul>
+        </div>
+      </section>
     </main>
   );
 }
