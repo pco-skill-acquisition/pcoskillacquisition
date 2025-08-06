@@ -17,14 +17,14 @@
     135deg,
     rgba(0, 35, 102, 0.4),
     rgba(11, 31, 58, 0.6)
-  ); /* Gradient overlay */
+  );
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .title {
-  color: #ffffff; /* Secondary white */
+  color: #ffffff;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 2.5rem;
@@ -42,8 +42,38 @@
   transform: translateX(-50%);
   width: 50%;
   height: 2px;
-  background-color: #ffd700; /* Accent color underline */
+  background-color: #ffd700;
   opacity: 0.8;
+}
+
+.aboutSection {
+  padding: 2rem 0;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #002366;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.aboutText {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  color: #002366;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 @keyframes fadeIn {
@@ -64,5 +94,13 @@
 
   .title {
     font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .aboutText {
+    font-size: 1rem;
   }
 }

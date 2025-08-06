@@ -8,7 +8,12 @@ export default function ApapaCampus() {
           <h1 className={styles.title}>Apapa Campus</h1>
         </div>
       </section>
-      {/* Additional sections will go here as per your next steps */}
+      <section className={styles.aboutSection}>
+        <div className={styles.container}>
+          <h2 className={styles.subtitle}>About Apapa Campus</h2>
+          <p className={styles.aboutText}>This is a temporary description of the Apapa Campus. Located in the bustling heart of Lagos, this campus is dedicated to providing top-tier skill acquisition programs. Stay tuned for more details about our facilities, courses, and community impact!</p>
+        </div>
+      </section>
     </main>
   );
 }
