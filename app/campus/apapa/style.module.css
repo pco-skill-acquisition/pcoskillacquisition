@@ -48,22 +48,13 @@
 
 .aboutSection {
   padding: 2rem 0;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.95
-  ); /* Light background with slight opacity */
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-  border: 2px solid #ffd700; /* Accent color border */
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .subtitle {
@@ -78,7 +69,7 @@
 
 .subtitle:hover {
   transform: scale(1.05);
-  color: #ffd700; /* Accent color on hover */
+  color: #ffd700;
 }
 
 .aboutText {
@@ -94,6 +85,42 @@
 
 .aboutText:hover {
   transform: scale(1.02);
+}
+
+.coursesSection {
+  padding: 2rem 0;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.coursesList {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.coursesList li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  color: #002366;
+  margin: 1rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.coursesList li:before {
+  content: "★"; /* Star icon as bullet */
+  color: #ffd700;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.coursesList li:hover {
+  transform: scale(1.05);
+  color: #ffd700;
 }
 
 @keyframes fadeIn {
@@ -116,15 +143,15 @@
     font-size: 2rem;
   }
 
-  .container {
-    padding: 1rem;
-  }
-
   .subtitle {
     font-size: 1.5rem;
   }
 
   .aboutText {
+    font-size: 1rem;
+  }
+
+  .coursesList li {
     font-size: 1rem;
   }
 }
