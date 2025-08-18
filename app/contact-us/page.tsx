@@ -70,10 +70,10 @@ export default function ContactUs() {
         </form>
         <div className={styles.socialSection}>
           <a href="https://kingschat.online/user/ce_bigchurch" target="_blank" rel="noopener noreferrer">
-            <Image src="/kingschat.png" alt="KingsChat" width={50} height={50} className={styles.socialIcon} />
+            <Image src="/kingschat-logo.png" alt="KingsChat" width={50} height={50} className={styles.socialIcon} />
           </a>
           <a href="https://www.instagram.com/pco_skill_acquisition_program/" target="_blank" rel="noopener noreferrer">
-            <Image src="/instagram.png" alt="Instagram" width={50} height={50} className={styles.socialIcon} />
+            <Image src="/instagram-logo.png" alt="Instagram" width={50} height={50} className={styles.socialIcon} />
           </a>
         </div>
       </section>
