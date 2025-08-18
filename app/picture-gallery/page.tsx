@@ -25,7 +25,7 @@ export default function PictureGallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
-  let scrollInterval = null;
+  let scrollInterval: NodeJS.Timeout | null = null; // Explicitly typed as NodeJS.Timeout
 
   useEffect(() => {
     const startAutoScroll = () => {
