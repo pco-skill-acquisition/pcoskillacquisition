@@ -80,7 +80,6 @@
 
 .carousel {
   display: flex;
-  transition: transform 0.5s ease;
   width: max-content;
 }
 
@@ -169,13 +168,13 @@
 
   .carouselItem {
     min-width: 33.33%;
-    margin: 0 0.25rem; /* Reduced spacing */
+    margin: 0 0.25rem;
   }
 }
 
 @media (min-width: 1024px) {
   .carouselItem {
     min-width: 25%;
-    margin: 0 0.25rem; /* Reduced spacing */
+    margin: 0 0.25rem;
   }
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import styles from './style.module.css';
 
 export default function PictureGallery() {
@@ -19,48 +19,10 @@ export default function PictureGallery() {
     '/image11.jpg',
     '/image12.jpg',
     '/image13.jpg',
-    '/image1.jpg', // Duplicate first image for seamless loop
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
-  let scrollInterval: NodeJS.Timeout | null = null; // Explicitly typed as NodeJS.Timeout
-
-  useEffect(() => {
-    const startAutoScroll = () => {
-      scrollInterval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % (images.length - 1));
-      }, 2000);
-    };
-
-    startAutoScroll();
-
-    const handleScroll = () => {
-      if (scrollInterval) {
-        clearInterval(scrollInterval);
-      }
-      const timeout = setTimeout(startAutoScroll, 3000); // Resume after 3s of inactivity
-      return () => clearTimeout(timeout);
-    };
-
-    if (carouselRef.current) {
-      carouselRef.current.addEventListener('scroll', handleScroll);
-    }
-
-    return () => {
-      if (scrollInterval) clearInterval(scrollInterval);
-      if (carouselRef.current) {
-        carouselRef.current.removeEventListener('scroll', handleScroll);
-      }
-    };
-  }, [images.length]);
-
-  useEffect(() => {
-    if (carouselRef.current) {
-      carouselRef.current.style.transform = `translateX(-${currentIndex * 100 / (images.length - 1) * (images.length - 1) / images.length}%)`;
-    }
-  }, [currentIndex]);
 
   const openLightbox = (src: string) => {
     setSelectedImage(src);
@@ -84,7 +46,7 @@ export default function PictureGallery() {
           <div className={styles.carousel}>
             {images.map((src, index) => (
               <div key={index} className={styles.carouselItem} onClick={() => openLightbox(src)}>
-                <Image src={src} alt={`Skill Acquisition Moment ${index < images.length - 1 ? index + 1 : 1}`} width={300} height={200} className={styles.carouselImage} />
+                <Image src={src} alt={`Skill Acquisition Moment ${index + 1}`} width={300} height={200} className={styles.carouselImage} />
               </div>
             ))}
           </div>
