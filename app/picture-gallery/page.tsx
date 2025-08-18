@@ -29,7 +29,7 @@ export default function PictureGallery() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % (images.length - 1)); // Loop within original length
-    }, 5000);
+    }, 2000); // Faster auto-scroll at 2 seconds
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -38,14 +38,6 @@ export default function PictureGallery() {
       carouselRef.current.style.transform = `translateX(-${currentIndex * 100 / (images.length - 1) * (images.length - 1) / images.length}%)`;
     }
   }, [currentIndex]);
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % (images.length - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % (images.length - 1));
-  };
 
   const openLightbox = (src: string) => {
     setSelectedImage(src);
@@ -65,18 +57,14 @@ export default function PictureGallery() {
       </section>
       <section className={styles.carouselSection}>
         <h2 className={styles.sectionTitle}>Explore Our Visual Journey</h2>
-        <div className={styles.carouselContainer}>
-          <button className={styles.arrow} onClick={handlePrev}>&lt;</button>
-          <div className={styles.carouselWrapper}>
-            <div className={styles.carousel} ref={carouselRef}>
-              {images.map((src, index) => (
-                <div key={index} className={styles.carouselItem} onClick={() => openLightbox(src)}>
-                  <Image src={src} alt={`Skill Acquisition Moment ${index < images.length - 1 ? index + 1 : 1}`} width={300} height={200} className={styles.carouselImage} />
-                </div>
-              ))}
-            </div>
+        <div className={styles.carouselWrapper}>
+          <div className={styles.carousel} ref={carouselRef}>
+            {images.map((src, index) => (
+              <div key={index} className={styles.carouselItem} onClick={() => openLightbox(src)}>
+                <Image src={src} alt={`Skill Acquisition Moment ${index < images.length - 1 ? index + 1 : 1}`} width={300} height={200} className={styles.carouselImage} />
+              </div>
+            ))}
           </div>
-          <button className={styles.arrow} onClick={handleNext}>&gt;</button>
         </div>
       </section>
       {selectedImage && (
