@@ -22,8 +22,8 @@ export default function PictureGallery() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const carouselRef = useRef(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,7 +38,7 @@ export default function PictureGallery() {
     }
   }, [currentIndex]);
 
-  const openLightbox = (src) => {
+  const openLightbox = (src: string) => {
     setSelectedImage(src);
   };
 
