@@ -38,6 +38,14 @@ export default function PictureGallery() {
     }
   }, [currentIndex]);
 
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
   const openLightbox = (src: string) => {
     setSelectedImage(src);
   };
@@ -49,27 +57,30 @@ export default function PictureGallery() {
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
-        <Image src="/image7.jpg" alt="Hero Background" fill className={styles.heroImage} />
+        <Image src="/image7.jpg" alt="Hero Background of Skill Acquisition" fill className={styles.heroImage} />
         <div className={styles.heroOverlay}>
-          <h1 className={styles.heroTitle}>Gallery of Naija Skill Vibes</h1>
+          <h1 className={styles.heroTitle}>Picture Gallery</h1>
         </div>
       </section>
       <section className={styles.carouselSection}>
-        <h2 className={styles.sectionTitle}>Scroll Through the Action</h2>
-        <div className={styles.carouselWrapper}>
-          <div className={styles.carousel} ref={carouselRef}>
-            {images.map((src, index) => (
-              <div key={index} className={styles.carouselItem} onClick={() => openLightbox(src)}>
-                <Image src={src} alt={`Gallery ${index + 1}`} width={300} height={200} className={styles.carouselImage} />
-                <div className={styles.carouselCaption}>Skill Snap {index + 1}</div>
-              </div>
-            ))}
+        <h2 className={styles.sectionTitle}>Explore Our Visual Journey</h2>
+        <div className={styles.carouselContainer}>
+          <button className={styles.arrow} onClick={handlePrev}>&lt;</button>
+          <div className={styles.carouselWrapper}>
+            <div className={styles.carousel} ref={carouselRef}>
+              {images.map((src, index) => (
+                <div key={index} className={styles.carouselItem} onClick={() => openLightbox(src)}>
+                  <Image src={src} alt={`Skill Acquisition Moment ${index + 1}`} width={300} height={200} className={styles.carouselImage} />
+                </div>
+              ))}
+            </div>
           </div>
+          <button className={styles.arrow} onClick={handleNext}>&gt;</button>
         </div>
       </section>
       {selectedImage && (
         <div className={styles.lightbox} onClick={closeLightbox}>
-          <Image src={selectedImage} alt="Full view" width={800} height={600} className={styles.fullImage} />
+          <Image src={selectedImage} alt="Full view of Skill Moment" width={800} height={600} className={styles.fullImage} />
           <button className={styles.closeButton} onClick={closeLightbox}>×</button>
         </div>
       )}
