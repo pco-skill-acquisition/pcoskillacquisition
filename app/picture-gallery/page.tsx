@@ -1,27 +1,78 @@
+'use client';
+
 import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
 import styles from './style.module.css';
 
 export default function PictureGallery() {
-  const images = Array.from({ length: 12 }, (_, i) => `/image${i + 2}.jpg`);
+  const images = [
+    '/image1.jpg',
+    '/image2.jpg',
+    '/image3.jpg',
+    '/image4.jpg',
+    '/image5.jpg',
+    '/image6.jpg',
+    '/image7.jpg',
+    '/image8.jpg',
+    '/image9.jpg',
+    '/image10.jpg',
+    '/image11.jpg',
+    '/image12.jpg',
+    '/image13.jpg',
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  }, [currentIndex]);
+
+  const openLightbox = (src) => {
+    setSelectedImage(src);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Picture Gallery</h1>
-      <p className={styles.text}>
-        Check out the vibes at PCO Skill Acquisition! From campus life to skill-up sessions, our Naija hustle is real.
-      </p>
-      <div className={styles.grid}>
-        {images.map((src, index) => (
-          <Image
-            key={index}
-            src={src}
-            alt={`Gallery Image ${index + 2}`}
-            width={300}
-            height={200}
-            className={styles.image}
-          />
-        ))}
-      </div>
-    </div>
+    <main className={styles.main}>
+      <section className={styles.hero}>
+        <Image src="/image7.jpg" alt="Hero Background" fill className={styles.heroImage} />
+        <div className={styles.heroOverlay}>
+          <h1 className={styles.heroTitle}>Gallery of Naija Skill Vibes</h1>
+        </div>
+      </section>
+      <section className={styles.carouselSection}>
+        <h2 className={styles.sectionTitle}>Scroll Through the Action</h2>
+        <div className={styles.carouselWrapper}>
+          <div className={styles.carousel} ref={carouselRef}>
+            {images.map((src, index) => (
+              <div key={index} className={styles.carouselItem} onClick={() => openLightbox(src)}>
+                <Image src={src} alt={`Gallery ${index + 1}`} width={300} height={200} className={styles.carouselImage} />
+                <div className={styles.carouselCaption}>Skill Snap {index + 1}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {selectedImage && (
+        <div className={styles.lightbox} onClick={closeLightbox}>
+          <Image src={selectedImage} alt="Full view" width={800} height={600} className={styles.fullImage} />
+          <button className={styles.closeButton} onClick={closeLightbox}>×</button>
+        </div>
+      )}
+    </main>
   );
 }
