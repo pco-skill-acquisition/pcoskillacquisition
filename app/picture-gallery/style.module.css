@@ -71,7 +71,7 @@
 .carouselWrapper {
   overflow-x: auto;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+  -webkit-overflow-scrolling: touch;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -81,16 +81,16 @@
 .carousel {
   display: flex;
   transition: transform 0.5s ease;
-  width: max-content; /* Allow full width for all items */
+  width: max-content;
 }
 
 .carouselItem {
-  min-width: 300px; /* Match image width */
-  height: 200px; /* Match image height */
+  min-width: 300px;
+  height: 200px;
   position: relative;
   cursor: pointer;
-  margin: 0 0.5rem; /* Space between items */
-  flex-shrink: 0; /* Prevent shrinking */
+  margin: 0 0.5rem;
+  flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
@@ -169,12 +169,13 @@
 
   .carouselItem {
     min-width: 33.33%;
-    margin: 0 0.75rem;
+    margin: 0 0.25rem; /* Reduced spacing */
   }
 }
 
 @media (min-width: 1024px) {
   .carouselItem {
     min-width: 25%;
+    margin: 0 0.25rem; /* Reduced spacing */
   }
 }

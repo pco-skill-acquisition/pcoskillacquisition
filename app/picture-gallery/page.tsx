@@ -25,12 +25,35 @@ export default function PictureGallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
+  let scrollInterval = null;
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % (images.length - 1)); // Loop within original length
-    }, 2000); // Faster auto-scroll at 2 seconds
-    return () => clearInterval(interval);
+    const startAutoScroll = () => {
+      scrollInterval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % (images.length - 1));
+      }, 2000);
+    };
+
+    startAutoScroll();
+
+    const handleScroll = () => {
+      if (scrollInterval) {
+        clearInterval(scrollInterval);
+      }
+      const timeout = setTimeout(startAutoScroll, 3000); // Resume after 3s of inactivity
+      return () => clearTimeout(timeout);
+    };
+
+    if (carouselRef.current) {
+      carouselRef.current.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      if (scrollInterval) clearInterval(scrollInterval);
+      if (carouselRef.current) {
+        carouselRef.current.removeEventListener('scroll', handleScroll);
+      }
+    };
   }, [images.length]);
 
   useEffect(() => {
@@ -57,8 +80,8 @@ export default function PictureGallery() {
       </section>
       <section className={styles.carouselSection}>
         <h2 className={styles.sectionTitle}>Explore Our Visual Journey</h2>
-        <div className={styles.carouselWrapper}>
-          <div className={styles.carousel} ref={carouselRef}>
+        <div className={styles.carouselWrapper} ref={carouselRef}>
+          <div className={styles.carousel}>
             {images.map((src, index) => (
               <div key={index} className={styles.carouselItem} onClick={() => openLightbox(src)}>
                 <Image src={src} alt={`Skill Acquisition Moment ${index < images.length - 1 ? index + 1 : 1}`} width={300} height={200} className={styles.carouselImage} />
