@@ -167,14 +167,14 @@
   }
 
   .carouselItem {
-    min-width: 33.33%;
-    margin: 0 0.1rem; /* Reduced spacing */
+    min-width: 33%;
+    margin: 0 0.05rem; /* Reduced spacing */
   }
 }
 
 @media (min-width: 1024px) {
   .carouselItem {
-    min-width: 25%;
-    margin: 0 0.1rem; /* Reduced spacing */
+    min-width: 24%;
+    margin: 0 0.05rem; /* Reduced spacing */
   }
 }
