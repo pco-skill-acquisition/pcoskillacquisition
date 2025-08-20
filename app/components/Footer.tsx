@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import styles from './Footer.module.css';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
     <footer className={styles.footerContainer}>
       <div className={styles.logoSection}>
-        <Image src="/logo.png" alt="PCO Skill Acquisition Logo" width={100} height={100} className={styles.logo} />
+        <Image src="/logo.png" alt="PCO Skill Acquisition Logo" width={50} height={50} className={styles.logo} />
         <p className={styles.programText}>PCO Skill Acquisition Program</p>
       </div>
       <div className={styles.socialSection}>
@@ -19,9 +20,16 @@ export default function Footer() {
       <div className={styles.visitSection}>
         <h3 className={styles.visitTitle}>Visit</h3>
         <ul className={styles.campusList}>
-          <li>Lagos</li>
-          <li>Abuja</li>
+          <li><Link href="/campus/apapa">Apapa Campus</Link></li>
+          <li><Link href="/campus/ilasa">Ilasa Campus</Link></li>
+          <li><Link href="/campus/kano">Kano Campus</Link></li>
+          <li><Link href="/campus/warri">Warri Campus</Link></li>
+          <li><Link href="/campus/oyo">Oyo Campus</Link></li>
+          <li><Link href="/campus/secondary-school">Secondary School Campuses</Link></li>
         </ul>
+      </div>
+      <div className={styles.copyrightSection}>
+        <p>© 2025 PCO Skill Acquisition. Naija’s finest skill hub!</p>
       </div>
     </footer>
   );

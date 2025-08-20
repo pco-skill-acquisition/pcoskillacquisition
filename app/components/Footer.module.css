@@ -24,13 +24,15 @@
 .programText {
   font-family: "Gilroy", sans-serif;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   margin: 0.5rem 0;
   text-align: center;
 }
 
 .socialSection {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -46,6 +48,7 @@
 
 .visitSection {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .visitTitle {
@@ -63,13 +66,33 @@
 
 .campusList li {
   font-family: "Gilroy", sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0.25rem 0;
+}
+
+.campusList a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.campusList a:hover {
+  color: #ffd700;
+}
+
+.copyrightSection {
+  width: 100%;
+  text-align: center;
+  font-family: "Gilroy", sans-serif;
+  font-size: 0.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ffd700;
 }
 
 @media (min-width: 640px) {
   .footerContainer {
     padding: 2rem 2rem;
+    justify-content: space-between;
   }
 
   .logoSection,
@@ -79,7 +102,12 @@
   }
 
   .programText {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .socialSection {
+    flex-direction: row;
+    gap: 1.5rem;
   }
 
   .visitTitle {
@@ -87,6 +115,10 @@
   }
 
   .campusList li {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .copyrightSection {
+    font-size: 0.9rem;
   }
 }
