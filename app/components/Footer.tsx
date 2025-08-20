@@ -8,14 +8,14 @@ export default function Footer() {
       <div className={styles.logoSection}>
         <Image src="/logo.png" alt="PCO Skill Acquisition Logo" width={50} height={50} className={styles.logo} />
         <p className={styles.programText}>PCO Skill Acquisition Program</p>
-      </div>
-      <div className={styles.socialSection}>
-        <a href="https://kingschat.online/user/ce_bigchurch" target="_blank" rel="noopener noreferrer">
-          <Image src="/kingschat-logo.png" alt="KingsChat" width={40} height={40} className={styles.socialIcon} />
-        </a>
-        <a href="https://www.instagram.com/pco_skill_acquisition_program/" target="_blank" rel="noopener noreferrer">
-          <Image src="/instagram-logo.png" alt="Instagram" width={40} height={40} className={styles.socialIcon} />
-        </a>
+        <div className={styles.socialSection}>
+          <a href="https://kingschat.online/user/ce_bigchurch" target="_blank" rel="noopener noreferrer">
+            <Image src="/kingschat-logo.png" alt="KingsChat" width={40} height={40} className={styles.socialIcon} />
+          </a>
+          <a href="https://www.instagram.com/pco_skill_acquisition_program/" target="_blank" rel="noopener noreferrer">
+            <Image src="/instagram-logo.png" alt="Instagram" width={40} height={40} className={styles.socialIcon} />
+          </a>
+        </div>
       </div>
       <div className={styles.visitSection}>
         <h3 className={styles.visitTitle}>Visit</h3>
