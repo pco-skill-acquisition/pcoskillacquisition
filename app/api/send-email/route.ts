@@ -7,8 +7,8 @@ export async function POST(request: Request) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "cebigchurchtestimonies@gmail.com", // Replace with env variable in production
-      pass: "your-app-password", // Replace with env variable or secure setup
+      user: "cebigchurchtestimonies@gmail.com",
+      pass: process.env.EMAIL_PASSWORD || "default-password", // Fallback for local testing
     },
   });
 
