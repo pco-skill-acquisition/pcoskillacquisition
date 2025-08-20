@@ -23,8 +23,9 @@ export async function POST(request: Request) {
     await transporter.sendMail(mailOptions);
     return NextResponse.json({ success: true });
   } catch (error) {
+    const err = error as Error; // Type assertion to Error
     return NextResponse.json(
-      { success: false, error: error.message },
+      { success: false, error: err.message },
       { status: 500 }
     );
   }
