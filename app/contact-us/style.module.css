@@ -122,11 +122,14 @@
 }
 
 .socialIcon {
-  transition: transform 0.3s ease;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .socialIcon:hover {
   transform: scale(1.2);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.7);
 }
 
 @keyframes fadeIn {
