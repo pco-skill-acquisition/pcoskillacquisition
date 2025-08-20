@@ -7,14 +7,14 @@ export async function POST(request: Request) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "cebigchurchtestimonies@gmail.com",
+      user: "pcoskillacquisitionprogram@gmail.com",
       pass: process.env.EMAIL_PASSWORD || "default-password", // Fallback for local testing
     },
   });
 
   const mailOptions = {
     from: email,
-    to: "cebigchurchtestimonies@gmail.com",
+    to: "pcoskillacquisitionprogram@gmail.com",
     subject: `New Message from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
