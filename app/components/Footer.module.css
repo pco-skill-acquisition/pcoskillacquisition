@@ -1,0 +1,92 @@
+.footerContainer {
+  background-color: #002366;
+  color: #ffffff;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  border-radius: 10px;
+}
+
+.programText {
+  font-family: "Gilroy", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.socialSection {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.socialIcon {
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  transform: scale(1.2);
+}
+
+.visitSection {
+  text-align: center;
+}
+
+.visitTitle {
+  font-family: "Gilroy", sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.campusList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.campusList li {
+  font-family: "Gilroy", sans-serif;
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+
+@media (min-width: 640px) {
+  .footerContainer {
+    padding: 2rem 2rem;
+  }
+
+  .logoSection,
+  .socialSection,
+  .visitSection {
+    margin-bottom: 0;
+  }
+
+  .programText {
+    font-size: 1.5rem;
+  }
+
+  .visitTitle {
+    font-size: 1.3rem;
+  }
+
+  .campusList li {
+    font-size: 1.1rem;
+  }
+}
