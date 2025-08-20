@@ -50,6 +50,8 @@
 .visitSection {
   text-align: center;
   margin-bottom: 1rem;
+  flex: 1 1 auto; /* Allow it to grow but not push too far */
+  max-width: 300px; /* Cap width to prevent stretching too far right */
 }
 
 .visitTitle {
@@ -93,7 +95,8 @@
 @media (min-width: 640px) {
   .footerContainer {
     padding: 2rem 2rem;
-    justify-content: space-between;
+    justify-content: center; /* Center all items on desktop */
+    gap: 2rem; /* Add gap between sections */
   }
 
   .logoSection {
@@ -107,6 +110,10 @@
   .socialSection {
     flex-direction: row;
     gap: 1.5rem;
+  }
+
+  .visitSection {
+    max-width: 350px; /* Slightly wider cap for desktop */
   }
 
   .visitTitle {
