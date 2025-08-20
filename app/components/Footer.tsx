@@ -6,7 +6,9 @@ export default function Footer() {
   return (
     <footer className={styles.footerContainer}>
       <div className={styles.logoSection}>
-        <Image src="/logo.png" alt="PCO Skill Acquisition Logo" width={50} height={50} className={styles.logo} />
+        <Link href="/">
+          <Image src="/logo.png" alt="PCO Skill Acquisition Logo" width={50} height={50} className={styles.logo} />
+        </Link>
         <p className={styles.programText}>PCO Skill Acquisition Program</p>
         <div className={styles.socialSection}>
           <a href="https://kingschat.online/user/ce_bigchurch" target="_blank" rel="noopener noreferrer">
