@@ -45,7 +45,7 @@ export default function Home() {
       <section className={styles.aboutSection}>
         <h2 className={styles.sectionTitle}>About Us</h2>
         <p className={styles.aboutText}>We’re dedicated to empowering Nigeria’s youth with top-notch skill training under the vision of Pastor Chris Oyakhilome. Join us to unlock your potential!</p>
-        <Link href="/about" passHref>
+        <Link href="/our-vision" passHref>
           <button className={styles.learnMoreButton}>Learn More</button>
         </Link>
       </section>
