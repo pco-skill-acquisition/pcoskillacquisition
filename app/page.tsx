@@ -2,6 +2,7 @@
 
 import styles from './homepage.module.css';
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
   useEffect(() => {
@@ -15,7 +16,9 @@ export default function Home() {
         <div className={styles.overlay}>
           <h1 className={styles.title}>Pastor Chris Oyakhilome<br />Skill Acquisition</h1>
           <div className={styles.buttonContainer}>
-            <button className={styles.registerButton}>Register Now</button>
+            <Link href="/contact-us" passHref>
+              <button className={styles.registerButton}>Register Now</button>
+            </Link>
             <button className={styles.exploreButton}>Explore Campuses</button>
           </div>
         </div>
