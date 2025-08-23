@@ -5,6 +5,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 20px; /* Rounded edges for appeal */
+  overflow: hidden; /* Ensure content respects the radius */
 }
 
 .overlay {
@@ -13,12 +15,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(
-    0,
-    35,
-    102,
-    0.6
-  ); /* Semi-transparent overlay with primary color */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 35, 102, 0.3),
+    rgba(0, 35, 102, 0.7)
+  ); /* Gradient overlay */
   display: flex;
   justify-content: center;
   align-items: center;
