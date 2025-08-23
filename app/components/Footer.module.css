@@ -6,9 +6,8 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
-  width: 100%;
-  max-width: 1200px; /* Constrain max width */
-  margin: 0 auto; /* Center the container */
+  width: 100%; /* Fill the screen */
+  margin: 0; /* Remove margin to fit screen */
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
 }
 
