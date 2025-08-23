@@ -19,7 +19,6 @@ export default function Home() {
             <Link href="/contact-us" passHref>
               <button className={styles.registerButton}>Register Now</button>
             </Link>
-            <button className={styles.exploreButton}>Explore Campuses</button>
           </div>
         </div>
       </section>
