@@ -202,7 +202,7 @@
 .testimonialsSection {
   padding: 2rem 1rem;
   background: linear-gradient(135deg, #002366, #0b1f3a);
-  color: #ffffff;
+  color: #e0e0e0; /* Lighter text for contrast */
   text-align: center;
   position: relative;
 }
@@ -219,12 +219,12 @@
   padding: 1.5rem;
   border-radius: 15px;
   width: 300px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1); /* Softer glow */
   transition: box-shadow 0.3s ease;
 }
 
 .testimonialCard:hover {
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); /* Gentler hover effect */
 }
 
 .testimonialCard p {
