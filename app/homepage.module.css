@@ -5,8 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px; /* Rounded edges for appeal */
-  overflow: hidden; /* Ensure content respects the radius */
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0; /* Start hidden */
 }
 
 .overlay {
@@ -19,7 +20,7 @@
     to bottom,
     rgba(0, 35, 102, 0.3),
     rgba(0, 35, 102, 0.7)
-  ); /* Gradient overlay */
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,13 +29,13 @@
 }
 
 .title {
-  color: #ffffff; /* Secondary white for contrast */
+  color: #ffffff;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 2rem;
   text-align: center;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Slight shadow for readability */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .buttonContainer {
@@ -44,8 +45,8 @@
 
 .registerButton,
 .exploreButton {
-  background-color: #ffd700; /* Accent color */
-  color: #002366; /* Primary color */
+  background-color: #ffd700;
+  color: #002366;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
@@ -57,8 +58,21 @@
 
 .registerButton:hover,
 .exploreButton:hover {
-  background-color: #ffc107; /* Slightly darker accent on hover */
+  background-color: #ffc107;
   transform: scale(1.05);
+}
+
+.fadeIn {
+  animation: fadeInAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 640px) {

@@ -1,6 +1,14 @@
+"use client";
+
 import styles from './homepage.module.css';
+import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    const section = document.querySelector(`.${styles.topSection}`);
+    if (section) section.classList.add(styles.fadeIn);
+  }, []);
+
   return (
     <main>
       <section className={styles.topSection}>
