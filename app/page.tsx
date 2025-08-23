@@ -15,8 +15,6 @@ export default function Home() {
       <section className={styles.topSection}>
         <div className={styles.overlay}>
           <h1 className={styles.title}>Pastor Chris Oyakhilome<br />Skill Acquisition</h1>
-          <p className={styles.subtitle}>Empowering Nigeria’s Future with Practical Skills</p>
-          <p className={styles.tagline}>Join the Movement – Transform Your Life Today!</p>
           <div className={styles.buttonContainer}>
             <Link href="/contact-us" passHref>
               <button className={styles.registerButton}>Register Now</button>
@@ -41,6 +39,26 @@ export default function Home() {
             <span className={styles.skillIcon}>🎵</span>
             <h3>Music Production</h3>
             <p>Create beats and tracks like a pro.</p>
+          </div>
+        </div>
+      </section>
+      <section className={styles.aboutSection}>
+        <h2 className={styles.sectionTitle}>About Us</h2>
+        <p className={styles.aboutText}>We’re dedicated to empowering Nigeria’s youth with top-notch skill training under the vision of Pastor Chris Oyakhilome. Join us to unlock your potential!</p>
+        <Link href="/about" passHref>
+          <button className={styles.learnMoreButton}>Learn More</button>
+        </Link>
+      </section>
+      <section className={styles.eventsSection}>
+        <h2 className={styles.sectionTitle}>Upcoming Events</h2>
+        <div className={styles.eventsGrid}>
+          <div className={styles.eventCard}>
+            <h3>Skill Bootcamp</h3>
+            <p>Aug 30, 2025 - Lagos Campus</p>
+          </div>
+          <div className={styles.eventCard}>
+            <h3>Webinar Series</h3>
+            <p>Sep 5, 2025 - Online</p>
           </div>
         </div>
       </section>
