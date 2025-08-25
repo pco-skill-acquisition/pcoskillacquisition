@@ -17,6 +17,9 @@ export default function Footer() {
           <a href="https://www.instagram.com/pco_skill_acquisition_program/" target="_blank" rel="noopener noreferrer">
             <Image src="/instagram-logo.png" alt="Instagram" width={40} height={40} className={styles.socialIcon} />
           </a>
+          <a href="tel:+1234567890">
+            <Image src="/phone-icon.png" alt="Phone" width={40} height={40} className={styles.socialIcon} />
+          </a>
         </div>
       </div>
       <div className={styles.visitSection}>
