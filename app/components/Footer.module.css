@@ -125,6 +125,11 @@
   .copyrightSection {
     font-size: 0.6rem;
   }
+
+  .socialIcon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media (min-width: 640px) {
