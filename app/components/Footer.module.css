@@ -4,7 +4,7 @@
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
   max-width: 100vw; /* Lock to viewport width */
@@ -42,15 +42,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   margin-top: 0.5rem;
+  justify-content: center;
   flex: 0 0 auto;
-  max-width: 100px;
+  max-width: 150px;
 }
 
 .socialIcon {
   border-radius: 50%;
   transition: transform 0.3s ease;
+  width: 30px;
+  height: 30px;
 }
 
 .socialIcon:hover {
@@ -109,8 +112,7 @@
 @media (min-width: 640px) {
   .footerContainer {
     padding: 1.5rem;
-    justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .logoSection {
@@ -122,8 +124,7 @@
   }
 
   .socialSection {
-    flex-direction: row;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .visitSection {

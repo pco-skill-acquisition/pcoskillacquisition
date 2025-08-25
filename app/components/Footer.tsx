@@ -12,13 +12,13 @@ export default function Footer() {
         <p className={styles.programText}>PCO Skill Acquisition Program</p>
         <div className={styles.socialSection}>
           <a href="https://kingschat.online/user/ce_bigchurch" target="_blank" rel="noopener noreferrer">
-            <Image src="/kingschat-logo.png" alt="KingsChat" width={40} height={40} className={styles.socialIcon} />
+            <Image src="/kingschat-logo.png" alt="KingsChat" width={30} height={30} className={styles.socialIcon} />
           </a>
           <a href="https://www.instagram.com/pco_skill_acquisition_program/" target="_blank" rel="noopener noreferrer">
-            <Image src="/instagram-logo.png" alt="Instagram" width={40} height={40} className={styles.socialIcon} />
+            <Image src="/instagram-logo.png" alt="Instagram" width={30} height={30} className={styles.socialIcon} />
           </a>
           <a href="tel:+1234567890">
-            <Image src="/phone-icon.png" alt="Phone" width={40} height={40} className={styles.socialIcon} />
+            <Image src="/phone-icon.png" alt="Phone" width={30} height={30} className={styles.socialIcon} style={{ filter: 'brightness(0) invert(1)' }} />
           </a>
         </div>
       </div>
