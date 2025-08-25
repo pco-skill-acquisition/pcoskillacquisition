@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <>
+    <footer className={styles.footerContainer}>
       <div className={styles.logoSection}>
         <Link href="/">
           <Image src="/logo.png" alt="PCO Skill Acquisition Logo" width={50} height={50} className={styles.logo} />
@@ -33,6 +33,6 @@ export default function Footer() {
       <div className={styles.copyrightSection}>
         <p>© 2025 PCO Skill Acquisition.</p>
       </div>
-    </>
+    </footer>
   );
 }

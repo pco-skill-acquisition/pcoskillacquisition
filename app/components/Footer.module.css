@@ -1,13 +1,26 @@
-.logoSection {
+.footerContainer {
   background-color: #002366;
   color: #ffffff;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 100%; /* Ensure it doesn't exceed screen */
+  margin: 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.logoSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 1rem;
-  flex: 0 0 auto; /* Prevent stretching */
-  max-width: 100px; /* Limit logo section width */
-  padding: 1rem; /* Added padding to replace container */
+  flex: 0 0 auto;
+  max-width: 100px;
+  padding: 0;
 }
 
 .logo {
@@ -21,17 +34,17 @@
   font-size: 0.9rem;
   margin: 0.5rem 0;
   text-align: center;
-  max-width: 100%; /* Ensure text doesn't overflow */
+  max-width: 100%;
 }
 
 .socialSection {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem; /* Reduced gap to save space */
+  gap: 0.5rem;
   margin-top: 0.5rem;
-  flex: 0 0 auto; /* Prevent stretching */
-  max-width: 100px; /* Limit social section width */
+  flex: 0 0 auto;
+  max-width: 100px;
 }
 
 .socialIcon {
@@ -44,13 +57,11 @@
 }
 
 .visitSection {
-  background-color: #002366;
-  color: #ffffff;
   text-align: center;
   margin-bottom: 1rem;
   flex: 1 1 auto;
-  max-width: 250px; /* Reduced max width to fit */
-  padding: 1rem; /* Added padding to replace container */
+  max-width: 250px;
+  padding: 0;
 }
 
 .visitTitle {
@@ -70,7 +81,7 @@
   font-family: "Gilroy", sans-serif;
   font-size: 0.9rem;
   margin: 0.25rem 0;
-  white-space: nowrap; /* Prevent text wrapping issues */
+  white-space: nowrap;
 }
 
 .campusList a {
@@ -84,20 +95,24 @@
 }
 
 .copyrightSection {
-  background-color: #002366;
-  color: #ffffff;
   width: 100%;
   text-align: center;
   font-family: "Gilroy", sans-serif;
   font-size: 0.8rem;
-  padding: 1rem; /* Added padding to replace container */
+  padding-top: 1rem;
   border-top: 1px solid #ffd700;
+  padding: 0;
 }
 
 @media (min-width: 640px) {
+  .footerContainer {
+    padding: 1.5rem;
+    justify-content: center;
+    gap: 1rem;
+  }
+
   .logoSection {
     margin-bottom: 0;
-    padding: 1.5rem; /* Adjusted padding for desktop */
   }
 
   .programText {
@@ -110,8 +125,7 @@
   }
 
   .visitSection {
-    max-width: 300px; /* Adjusted for desktop */
-    padding: 1.5rem; /* Adjusted padding for desktop */
+    max-width: 300px;
   }
 
   .visitTitle {
@@ -124,6 +138,5 @@
 
   .copyrightSection {
     font-size: 0.9rem;
-    padding: 1.5rem; /* Adjusted padding for desktop */
   }
 }
