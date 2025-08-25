@@ -76,6 +76,12 @@ export default function ContactUs() {
             <Image src="/instagram-logo.png" alt="Instagram" width={50} height={50} className={styles.socialIcon} />
           </a>
         </div>
+        <div className={styles.phoneSection}>
+          <a href="tel:+1234567890">
+            <Image src="/phone-icon.png" alt="Phone" width={40} height={40} className={styles.phoneIcon} />
+            <span className={styles.phoneNumber}>+1 (234) 567-890</span>
+          </a>
+        </div>
       </section>
     </main>
   );

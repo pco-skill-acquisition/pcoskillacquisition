@@ -121,6 +121,38 @@
   animation: pulse 2s infinite;
 }
 
+.phoneSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  animation: fadeIn 1s ease-in-out 0.6s;
+}
+
+.phoneIcon {
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phoneIcon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.7);
+}
+
+.phoneNumber {
+  font-family: "Gilroy", sans-serif;
+  font-size: 1rem;
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.phoneNumber:hover {
+  color: #ffffff;
+}
+
 .socialIcon {
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
@@ -171,6 +203,10 @@
   .submitButton {
     font-size: 1.2rem;
   }
+
+  .phoneNumber {
+    font-size: 1.2rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -180,5 +216,13 @@
 
   .socialSection {
     gap: 2rem;
+  }
+
+  .phoneSection {
+    gap: 0.75rem;
+  }
+
+  .phoneNumber {
+    font-size: 1.3rem;
   }
 }
