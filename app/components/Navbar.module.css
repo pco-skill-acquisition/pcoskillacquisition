@@ -17,6 +17,10 @@
   align-items: center;
 }
 
+.logoLink {
+  text-decoration: none; /* Remove underline from the Link */
+}
+
 .logoContainer {
   display: flex;
   flex-direction: column;
@@ -38,7 +42,7 @@
   color: #002366;
   text-align: center;
   margin-top: 0.25rem;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none; /* Explicitly remove underline */
 }
 
 @media (max-width: 640px) {
@@ -48,7 +52,7 @@
   }
   .logoText {
     font-size: 0.6rem;
-    text-decoration: none; /* Remove underline on mobile */
+    text-decoration: none; /* Explicitly remove underline on mobile */
   }
 }
 
