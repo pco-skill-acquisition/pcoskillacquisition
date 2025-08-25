@@ -71,13 +71,13 @@ export default function ContactUs() {
         <div className={styles.socialSection}>
           <div className={styles.iconRow}>
             <a href="https://kingschat.online/user/ce_bigchurch" target="_blank" rel="noopener noreferrer">
-              <Image src="/kingschat-logo.png" alt="KingsChat" width={50} height={50} className={styles.socialIcon} />
+              <Image src="/kingschat-logo.png" alt="KingsChat" width={35} height={35} className={styles.socialIcon} />
             </a>
             <a href="https://www.instagram.com/pco_skill_acquisition_program/" target="_blank" rel="noopener noreferrer">
-              <Image src="/instagram-logo.png" alt="Instagram" width={50} height={50} className={styles.socialIcon} />
+              <Image src="/instagram-logo.png" alt="Instagram" width={35} height={35} className={styles.socialIcon} />
             </a>
             <a href="tel:+1234567890">
-              <Image src="/phone-icon.png" alt="Phone" width={40} height={40} className={styles.phoneIcon} />
+              <Image src="/phone-icon.png" alt="Phone" width={30} height={30} className={styles.phoneIcon} />
             </a>
           </div>
           <div className={styles.contactText}>
