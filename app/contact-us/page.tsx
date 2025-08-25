@@ -69,17 +69,21 @@ export default function ContactUs() {
           {status && <p className={styles.statusMessage}>{status}</p>}
         </form>
         <div className={styles.socialSection}>
-          <a href="https://kingschat.online/user/ce_bigchurch" target="_blank" rel="noopener noreferrer">
-            <Image src="/kingschat-logo.png" alt="KingsChat" width={50} height={50} className={styles.socialIcon} />
-          </a>
-          <a href="https://www.instagram.com/pco_skill_acquisition_program/" target="_blank" rel="noopener noreferrer">
-            <Image src="/instagram-logo.png" alt="Instagram" width={50} height={50} className={styles.socialIcon} />
-          </a>
-          <a href="tel:+1234567890">
-            <Image src="/phone-icon.png" alt="Phone" width={40} height={40} className={styles.phoneIcon} />
-            <span className={styles.phoneNumber}>+1 (234) 567-890</span>
-            <span className={styles.enquiryMessage}>for more enquiries, call or text</span>
-          </a>
+          <div className={styles.iconRow}>
+            <a href="https://kingschat.online/user/ce_bigchurch" target="_blank" rel="noopener noreferrer">
+              <Image src="/kingschat-logo.png" alt="KingsChat" width={50} height={50} className={styles.socialIcon} />
+            </a>
+            <a href="https://www.instagram.com/pco_skill_acquisition_program/" target="_blank" rel="noopener noreferrer">
+              <Image src="/instagram-logo.png" alt="Instagram" width={50} height={50} className={styles.socialIcon} />
+            </a>
+            <a href="tel:+1234567890">
+              <Image src="/phone-icon.png" alt="Phone" width={40} height={40} className={styles.phoneIcon} />
+            </a>
+          </div>
+          <div className={styles.contactText}>
+            <span className={styles.enquiryMessage}>For more information, please call or text on this number </span>
+            <a href="tel:+1234567890" className={styles.phoneNumber}>+1 (234) 567-890</a>
+          </div>
         </div>
       </section>
     </main>

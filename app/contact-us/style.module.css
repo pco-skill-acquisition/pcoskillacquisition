@@ -115,10 +115,21 @@
 
 .socialSection {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+  flex-direction: column;
+  align-items: center;
   margin-top: 2rem;
   animation: pulse 2s infinite;
+}
+
+.iconRow {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contactText {
+  text-align: center;
 }
 
 .phoneIcon {
@@ -142,6 +153,7 @@
   color: #ffd700;
   text-decoration: none;
   transition: color 0.3s ease;
+  margin-left: 0.5rem;
 }
 
 .phoneNumber:hover {
@@ -152,8 +164,6 @@
   font-family: "Gilroy", sans-serif;
   font-size: 0.9rem;
   color: #ffffff;
-  margin-left: 0.5rem;
-  align-self: center;
 }
 
 .socialIcon {
@@ -221,7 +231,7 @@
     max-width: 800px;
   }
 
-  .socialSection {
+  .iconRow {
     gap: 2rem;
   }
 
