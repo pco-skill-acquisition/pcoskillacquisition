@@ -109,6 +109,24 @@
   flex: 0 0 auto;
 }
 
+@media (max-width: 640px) {
+  .programText {
+    font-size: 0.7rem;
+  }
+
+  .visitTitle {
+    font-size: 0.9rem;
+  }
+
+  .campusList li {
+    font-size: 0.7rem;
+  }
+
+  .copyrightSection {
+    font-size: 0.6rem;
+  }
+}
+
 @media (min-width: 640px) {
   .footerContainer {
     padding: 1.5rem;
