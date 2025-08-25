@@ -17,13 +17,16 @@ export default function Navbar() {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <Link href="/">
-          <Image
-            src="/logo.png"
-            alt="PCO Skills Logo"
-            width={100}
-            height={30}
-            className={styles.logo}
-          />
+          <div className={styles.logoContainer}>
+            <Image
+              src="/logo.png"
+              alt="PCO Skills Logo"
+              width={100}
+              height={30}
+              className={styles.logo}
+            />
+            <span className={styles.logoText}>PCO Skill Acquisition</span>
+          </div>
         </Link>
         <button
           className={styles.toggle}
