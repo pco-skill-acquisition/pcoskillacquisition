@@ -131,13 +131,13 @@
 }
 
 .phoneIcon {
-  width: 50px; /* Increased to match social icons */
-  height: 50px; /* Increased to match social icons */
-  padding: 5px; /* Added padding for balance */
+  width: 40px; /* Reduced from 50px to 40px */
+  height: 40px; /* Reduced from 50px to 40px */
+  padding: 3px; /* Reduced padding for balance */
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #ffffff; /* Added background to frame the icon */
+  background-color: #ffffff; /* Kept background */
 }
 
 .phoneIcon:hover {
