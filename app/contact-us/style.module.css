@@ -121,23 +121,14 @@
   animation: pulse 2s infinite;
 }
 
-.phoneSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  animation: fadeIn 1s ease-in-out 0.6s;
-}
-
 .phoneIcon {
-  width: 40px; /* Reduced from 50px to 40px */
-  height: 40px; /* Reduced from 50px to 40px */
-  padding: 3px; /* Reduced padding for balance */
+  width: 40px;
+  height: 40px;
+  padding: 3px;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #ffffff; /* Kept background */
+  background-color: #ffffff;
 }
 
 .phoneIcon:hover {
@@ -155,6 +146,14 @@
 
 .phoneNumber:hover {
   color: #ffffff;
+}
+
+.enquiryMessage {
+  font-family: "Gilroy", sans-serif;
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-left: 0.5rem;
+  align-self: center;
 }
 
 .socialIcon {
@@ -211,6 +210,10 @@
   .phoneNumber {
     font-size: 1.2rem;
   }
+
+  .enquiryMessage {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -222,11 +225,11 @@
     gap: 2rem;
   }
 
-  .phoneSection {
-    gap: 0.75rem;
-  }
-
   .phoneNumber {
     font-size: 1.3rem;
+  }
+
+  .enquiryMessage {
+    font-size: 1.1rem;
   }
 }

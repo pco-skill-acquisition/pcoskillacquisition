@@ -75,11 +75,10 @@ export default function ContactUs() {
           <a href="https://www.instagram.com/pco_skill_acquisition_program/" target="_blank" rel="noopener noreferrer">
             <Image src="/instagram-logo.png" alt="Instagram" width={50} height={50} className={styles.socialIcon} />
           </a>
-        </div>
-        <div className={styles.phoneSection}>
           <a href="tel:+1234567890">
             <Image src="/phone-icon.png" alt="Phone" width={40} height={40} className={styles.phoneIcon} />
             <span className={styles.phoneNumber}>+1 (234) 567-890</span>
+            <span className={styles.enquiryMessage}>for more enquiries, call or text</span>
           </a>
         </div>
       </section>
