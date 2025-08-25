@@ -1,24 +1,13 @@
-.footerContainer {
+.logoSection {
   background-color: #002366;
   color: #ffffff;
-  padding: 1rem; /* Reduced padding to fit content */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  width: 100%; /* Fill the screen */
-  margin: 0; /* Remove margin to fit screen */
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-  overflow-x: hidden; /* Prevent horizontal overflow */
-}
-
-.logoSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 1rem;
   flex: 0 0 auto; /* Prevent stretching */
   max-width: 100px; /* Limit logo section width */
+  padding: 1rem; /* Added padding to replace container */
 }
 
 .logo {
@@ -55,10 +44,13 @@
 }
 
 .visitSection {
+  background-color: #002366;
+  color: #ffffff;
   text-align: center;
   margin-bottom: 1rem;
   flex: 1 1 auto;
   max-width: 250px; /* Reduced max width to fit */
+  padding: 1rem; /* Added padding to replace container */
 }
 
 .visitTitle {
@@ -92,23 +84,20 @@
 }
 
 .copyrightSection {
+  background-color: #002366;
+  color: #ffffff;
   width: 100%;
   text-align: center;
   font-family: "Gilroy", sans-serif;
   font-size: 0.8rem;
-  padding-top: 1rem;
+  padding: 1rem; /* Added padding to replace container */
   border-top: 1px solid #ffd700;
 }
 
 @media (min-width: 640px) {
-  .footerContainer {
-    padding: 1.5rem; /* Reduced padding */
-    justify-content: center;
-    gap: 1rem; /* Reduced gap */
-  }
-
   .logoSection {
     margin-bottom: 0;
+    padding: 1.5rem; /* Adjusted padding for desktop */
   }
 
   .programText {
@@ -122,6 +111,7 @@
 
   .visitSection {
     max-width: 300px; /* Adjusted for desktop */
+    padding: 1.5rem; /* Adjusted padding for desktop */
   }
 
   .visitTitle {
@@ -134,5 +124,6 @@
 
   .copyrightSection {
     font-size: 0.9rem;
+    padding: 1.5rem; /* Adjusted padding for desktop */
   }
 }
