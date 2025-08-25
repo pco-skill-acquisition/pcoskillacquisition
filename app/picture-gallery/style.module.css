@@ -66,7 +66,7 @@
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  margin-top: 2rem; /* Added spacing */
+  margin-top: 2rem;
 }
 
 .carouselWrapper {
@@ -169,13 +169,13 @@
 
   .carouselItem {
     min-width: 33%;
-    margin: 0 0.05rem;
+    margin: 0 0.2rem; /* Reduced from 0.5rem to 0.2rem */
   }
 }
 
 @media (min-width: 1024px) {
   .carouselItem {
     min-width: 24%;
-    margin: 0 0.05rem;
+    margin: 0 0.2rem; /* Reduced from 0.5rem to 0.2rem */
   }
 }
