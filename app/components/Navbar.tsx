@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleLinkClick = () => {
-    setIsMenuOpen(false); // Close menu on link click
+    setIsMenuOpen(false);
   };
 
   return (
