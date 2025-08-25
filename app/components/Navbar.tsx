@@ -25,7 +25,7 @@ export default function Navbar() {
           className={styles.toggle}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          ☰
+          {isMenuOpen ? '×' : '☰'} {/* Switch to X when open, ☰ when closed */}
         </button>
         <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
           <li>
