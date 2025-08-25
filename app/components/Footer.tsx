@@ -31,7 +31,7 @@ export default function Footer() {
         </ul>
       </div>
       <div className={styles.copyrightSection}>
-        <p>© 2025 PCO Skill Acquisition. Naija’s finest skill hub!</p>
+        <p>© 2025 PCO Skill Acquisition.</p>
       </div>
     </footer>
   );
