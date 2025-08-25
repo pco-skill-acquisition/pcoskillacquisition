@@ -9,6 +9,10 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false); // Close menu on link click
+  };
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -25,21 +29,21 @@ export default function Navbar() {
           className={styles.toggle}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? '×' : '☰'} {/* Switch to X when open, ☰ when closed */}
+          {isMenuOpen ? '×' : '☰'}
         </button>
         <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
           <li>
-            <Link href="/" className={styles.link}>
+            <Link href="/" className={styles.link} onClick={handleLinkClick}>
               Home
             </Link>
           </li>
           <li>
-            <Link href="/our-vision" className={styles.link}>
+            <Link href="/our-vision" className={styles.link} onClick={handleLinkClick}>
               Our Vision
             </Link>
           </li>
           <li>
-            <Link href="/picture-gallery" className={styles.link}>
+            <Link href="/picture-gallery" className={styles.link} onClick={handleLinkClick}>
               Picture Gallery
             </Link>
           </li>
@@ -54,32 +58,32 @@ export default function Navbar() {
             {isDropdownOpen && (
               <ul className={styles.dropdownMenu}>
                 <li>
-                  <Link href="/campus/apapa" className={styles.dropdownLink}>
+                  <Link href="/campus/apapa" className={styles.dropdownLink} onClick={handleLinkClick}>
                     Apapa Campus
                   </Link>
                 </li>
                 <li>
-                  <Link href="/campus/ilasa" className={styles.dropdownLink}>
+                  <Link href="/campus/ilasa" className={styles.dropdownLink} onClick={handleLinkClick}>
                     Ilasa Campus
                   </Link>
                 </li>
                 <li>
-                  <Link href="/campus/kano" className={styles.dropdownLink}>
+                  <Link href="/campus/kano" className={styles.dropdownLink} onClick={handleLinkClick}>
                     Kano Campus
                   </Link>
                 </li>
                 <li>
-                  <Link href="/campus/warri" className={styles.dropdownLink}>
+                  <Link href="/campus/warri" className={styles.dropdownLink} onClick={handleLinkClick}>
                     Warri Campus
                   </Link>
                 </li>
                 <li>
-                  <Link href="/campus/oyo" className={styles.dropdownLink}>
+                  <Link href="/campus/oyo" className={styles.dropdownLink} onClick={handleLinkClick}>
                     Oyo Campus
                   </Link>
                 </li>
                 <li>
-                  <Link href="/campus/secondary-school" className={styles.dropdownLink}>
+                  <Link href="/campus/secondary-school" className={styles.dropdownLink} onClick={handleLinkClick}>
                     Secondary School Campuses
                   </Link>
                 </li>
@@ -87,7 +91,7 @@ export default function Navbar() {
             )}
           </li>
           <li>
-            <Link href="/contact-us" className={styles.link}>
+            <Link href="/contact-us" className={styles.link} onClick={handleLinkClick}>
               Contact Us
             </Link>
           </li>
