@@ -46,7 +46,7 @@ export default function PictureGallery() {
           <div className={styles.carousel}>
             {images.map((src, index) => (
               <div key={index} className={styles.carouselItem} onClick={() => openLightbox(src)}>
-                <Image src={src} alt={`Skill Acquisition Moment ${index + 1}`} width={300} height={200} className={styles.carouselImage} />
+                <Image src={src} alt={`Skill Acquisition Moment ${index + 1}`} width={400} height={300} className={styles.carouselImage} />
               </div>
             ))}
           </div>
