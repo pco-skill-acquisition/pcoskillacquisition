@@ -31,7 +31,7 @@
 
 .title {
   color: #ffffff;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: bold;
   font-size: 2rem;
   text-align: center;
@@ -50,7 +50,7 @@
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -68,7 +68,7 @@
 }
 
 .sectionTitle {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
   color: #002366;
@@ -105,14 +105,14 @@
 }
 
 .skillCard h3 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 1.2rem;
   color: #002366;
   margin: 0.75rem 0;
 }
 
 .skillCard p {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 0.95rem;
   color: #444;
   margin: 0;
@@ -127,7 +127,7 @@
 }
 
 .aboutText {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 1.1rem;
   color: #444;
   margin-bottom: 1.5rem;
@@ -142,7 +142,7 @@
   border: none;
   padding: 0.75rem 1.75rem;
   border-radius: 25px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -186,14 +186,14 @@
 }
 
 .eventCard h3 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 1.2rem;
   color: #002366;
   margin: 0.75rem 0;
 }
 
 .eventCard p {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 0.95rem;
   color: #444;
   margin: 0;
@@ -228,19 +228,19 @@
 }
 
 .testimonialCard p {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 1.1rem;
   margin-bottom: 0.75rem;
 }
 
 .testimonialCard span {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 0.95rem;
   font-style: italic;
 }
 
 .sectionTitle {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
   margin-bottom: 1rem;
