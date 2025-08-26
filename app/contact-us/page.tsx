@@ -23,7 +23,7 @@ export default function ContactUs() {
       });
       if (response.ok) setStatus('Message sent successfully!');
       else setStatus('Failed to send message.');
-    } catch (error) {
+    } catch {
       setStatus('Error sending message.');
     }
   };
