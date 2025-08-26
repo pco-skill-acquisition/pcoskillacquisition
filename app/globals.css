@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap");
+
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Moved from Footer.module.css */
-  font-family: "Gilroy", sans-serif;
+  box-sizing: border-box;
+  font-family: "Urbanist", sans-serif;
 }
 
 /* Custom color scheme */
