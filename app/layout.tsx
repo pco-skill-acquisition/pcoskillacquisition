@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 
 export const metadata: Metadata = {
   title: 'PCO Skill Acquisition',
-  description: 'Naija’s dopest hub for mastering skills that shine!',
+  description: 'Pastor Chris Oyakhilome Skill Acquisition Program Website',
 };
 
 export default function RootLayout({
