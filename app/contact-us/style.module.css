@@ -34,7 +34,7 @@
 }
 
 .heroTitle {
-  font-family: "Gilroy", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: bold;
   font-size: 2rem;
   color: #ffd700;
@@ -65,7 +65,7 @@
   margin-bottom: 1rem;
   border: 2px solid #ffd700;
   border-radius: 10px;
-  font-family: "Gilroy", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 1rem;
   color: #002366;
   background-color: #ffffff;
@@ -78,7 +78,7 @@
   margin-bottom: 1rem;
   border: 2px solid #ffd700;
   border-radius: 10px;
-  font-family: "Gilroy", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 1rem;
   color: #002366;
   height: 150px;
@@ -92,7 +92,7 @@
   background-color: #ffd700;
   border: none;
   border-radius: 10px;
-  font-family: "Gilroy", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: bold;
   font-size: 1.1rem;
   color: #002366;
@@ -106,7 +106,7 @@
 }
 
 .statusMessage {
-  font-family: "Gilroy", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 1rem;
   color: #ffffff;
   text-align: center;
@@ -148,7 +148,7 @@
 }
 
 .phoneNumber {
-  font-family: "Gilroy", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 1rem;
   color: #ffd700;
   text-decoration: none;
@@ -161,7 +161,7 @@
 }
 
 .enquiryMessage {
-  font-family: "Gilroy", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 0.9rem;
   color: #ffffff;
 }

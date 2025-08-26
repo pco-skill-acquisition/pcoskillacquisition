@@ -26,7 +26,7 @@
 
 .title {
   color: #ffffff;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: bold;
   font-size: 2.5rem;
   text-align: center;
@@ -63,7 +63,7 @@
 }
 
 .subtitle {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: bold;
   font-size: 2rem;
   color: #002366;
@@ -78,7 +78,7 @@
 }
 
 .aboutText {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 1.2rem;
   color: #002366;
   line-height: 1.6;
@@ -132,7 +132,7 @@
 }
 
 .coursesList li {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 1.2rem;
   color: #002366;
   margin: 1rem 0;
@@ -168,7 +168,7 @@
 }
 
 .eventsList li {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 1.2rem;
   color: #002366;
   margin: 1rem 0;
