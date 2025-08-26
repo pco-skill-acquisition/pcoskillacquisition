@@ -30,7 +30,7 @@
 }
 
 .programText {
-  font-family: "Gilroy", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: bold;
   font-size: 0.9rem;
   margin: 0.5rem 0;
@@ -69,7 +69,7 @@
 }
 
 .visitTitle {
-  font-family: "Gilroy", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: bold;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
@@ -82,7 +82,7 @@
 }
 
 .campusList li {
-  font-family: "Gilroy", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 0.9rem;
   margin: 0.25rem 0;
   white-space: nowrap;
@@ -101,7 +101,7 @@
 .copyrightSection {
   width: 100%;
   text-align: center;
-  font-family: "Gilroy", sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-size: 0.8rem;
   padding-top: 1rem;
   border-top: 1px solid #ffd700;
