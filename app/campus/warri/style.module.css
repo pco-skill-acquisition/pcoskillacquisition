@@ -1,227 +1,242 @@
-.topSection {
-  position: relative;
-  height: 400px;
-  background: url("/image5.jpg") no-repeat center center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(5px);
+/* Main Container */
+.main {
+  min-height: 100vh;
+  background-color: #ffffff;
 }
 
-.overlay {
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 500px;
+  background: url("/image2.jpg") no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.heroOverlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 35, 102, 0.2),
-    rgba(11, 31, 58, 0.6)
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.5)
   );
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.title {
+.heroContent {
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 600;
   color: #ffffff;
-  font-family: "Urbanist", sans-serif;
-  font-weight: bold;
-  font-size: 2.5rem;
-  text-align: center;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  animation: fadeIn 1.5s ease-in-out;
-  position: relative;
+  letter-spacing: -0.02em;
+  margin: 0;
 }
 
-.title::after {
-  content: "";
-  position: absolute;
-  bottom: -0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;
-  height: 2px;
-  background-color: #ffd700;
-  opacity: 0.8;
-}
-
-.aboutSection {
-  padding: 2rem 0;
-  background-color: rgba(255, 255, 255, 0.95);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  border: 2px solid #ffd700;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.subtitle {
-  font-family: "Urbanist", sans-serif;
-  font-weight: bold;
-  font-size: 2rem;
-  color: #002366;
-  text-align: center;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.subtitle:hover {
-  transform: scale(1.05);
-  color: #ffd700;
-}
-
-.aboutText {
-  font-family: "Urbanist", sans-serif;
-  font-size: 1.2rem;
-  color: #002366;
-  line-height: 1.6;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  transition: transform 0.3s ease;
-}
-
-.aboutText:hover {
-  transform: scale(1.02);
+/* Section */
+.section {
+  padding: 5rem 1.5rem;
+  background-color: #fafafa;
 }
 
 .coursesSection {
-  padding: 2rem 0;
+  padding: 5rem 1.5rem;
+  background-color: #ffffff;
 }
 
-.coursesContainer {
+/* Container */
+.container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Content */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Heading */
+.heading {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+/* Description */
+.description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Course Grid */
+.courseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.courseCard {
   padding: 2rem;
-  background: url("/image13.jpg") no-repeat center center/cover;
-  position: relative;
-  border: 2px solid #ffd700;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.coursesContainer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  z-index: 0;
-}
-
-.coursesContainer > * {
-  position: relative;
-  z-index: 1;
-}
-
-.coursesList {
-  list-style: none;
-  padding: 0;
-  max-width: 800px;
-  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   text-align: center;
 }
 
-.coursesList li {
-  font-family: "Urbanist", sans-serif;
-  font-size: 1.2rem;
-  color: #002366;
-  margin: 1rem 0;
-  position: relative;
-  padding-left: 1.5rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+.courseCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
 }
 
-.coursesList li:before {
-  content: "★";
-  color: #ffd700;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
+.courseIcon {
+  width: 48px;
+  height: 48px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  margin: 0 auto 1.5rem;
 }
 
-.coursesList li:hover {
-  transform: scale(1.05);
-  color: #ffd700;
+.courseTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.5;
 }
 
-.eventsSection {
-  padding: 2rem 0;
-  background-color: rgba(255, 255, 255, 0.95);
-}
-
+/* Events List */
 .eventsList {
-  list-style: none;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
   max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.eventsList li {
-  font-family: "Urbanist", sans-serif;
-  font-size: 1.2rem;
-  color: #002366;
-  margin: 1rem 0;
-  position: relative;
-  padding-left: 1.5rem;
-  transition: transform 0.3s ease;
+.eventCard {
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
-.eventsList li:before {
-  content: "📅";
-  color: #ffd700;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
+.eventCard:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: #d1d5db;
 }
 
-.eventsList li:hover {
-  transform: scale(1.02);
+.eventContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+.eventName {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0;
+  flex: 1;
+}
+
+.eventDate {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    height: 400px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .section,
+  .coursesSection {
+    padding: 3.5rem 1rem;
+  }
+
+  .heading {
+    font-size: 1.875rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .courseGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .eventsList {
+    margin-top: 2rem;
+  }
+
+  .eventContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .eventDate {
+    white-space: normal;
   }
 }
 
-@media (max-width: 640px) {
-  .topSection {
-    height: 300px;
+@media (max-width: 480px) {
+  .hero {
+    height: 350px;
   }
 
-  .title {
+  .heroTitle {
     font-size: 2rem;
   }
 
-  .subtitle {
+  .heading {
     font-size: 1.5rem;
   }
 
-  .aboutText {
+  .courseCard,
+  .eventCard {
+    padding: 1.5rem;
+  }
+
+  .courseTitle {
     font-size: 1rem;
   }
 
-  .coursesList li {
-    font-size: 1rem;
-  }
-
-  .eventsList li {
+  .eventName {
     font-size: 1rem;
   }
 }
