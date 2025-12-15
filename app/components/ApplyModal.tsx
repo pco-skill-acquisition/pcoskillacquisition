@@ -203,7 +203,7 @@ export default function ApplyModal({ isOpen, onClose, prefilledSkill = '' }: App
 
           {submitStatus === 'success' && (
             <div className={styles.successMessage}>
-              Application submitted successfully! We'll contact you soon.
+              Application submitted successfully! We&apos;ll contact you soon.
             </div>
           )}
 
