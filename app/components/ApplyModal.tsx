@@ -49,12 +49,15 @@ export default function ApplyModal({ isOpen, onClose, prefilledSkill = '' }: App
   };
 
   const skillOptions = [
-    { value: 'Tailoring & Fashion Design', label: 'Tailoring & Fashion Design' },
-    { value: 'Welding & Metalwork', label: 'Welding & Metalwork' },
-    { value: 'Cosmetology & Beauty', label: 'Cosmetology & Beauty' },
-    { value: 'Electrical Installation', label: 'Electrical Installation' },
-    { value: 'Carpentry & Joinery', label: 'Carpentry & Joinery' },
+    { value: 'Tailoring', label: 'Tailoring' },
     { value: 'Catering & Food Service', label: 'Catering & Food Service' },
+    { value: 'Hair dressing', label: 'Hair dressing' },
+    { value: 'Cosmetology & Beauty', label: 'Cosmetology & Beauty' },
+    { value: 'Soap and Air Freshener Production', label: 'Soap and Air Freshener Production' },
+    { value: 'Web Design', label: 'Web Design' },
+    { value: 'Web Development', label: 'Web Development' },
+    { value: 'Photography', label: 'Photography' },
+    { value: 'Graphics Design', label: 'Graphics Design' },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
