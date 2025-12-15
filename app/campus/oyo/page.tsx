@@ -1,41 +1,82 @@
+import React from 'react';
 import styles from './style.module.css';
+import UpcomingEvents from '@/sections/upcoming/UpcomingEvents';
+import FeaturedSkills from '@/sections/featured/FeaturedSkills';
 
-export default function OyoCampus() {
+const OyoCampus: React.FC = () => {
+  const featuredSkills = [
+    {
+      id: 'tailoring',
+      name: 'Tailoring & Fashion Design',
+      description: 'Learn garment construction and clothing production for income or employment.',
+      icon: '✂️',
+      badge: 'Beginner-friendly'
+    },
+    {
+      id: 'welding',
+      name: 'Welding & Metalwork',
+      description: 'Master welding techniques for construction and manufacturing careers.',
+      icon: '🔧',
+      badge: 'Hands-on training'
+    },
+    {
+      id: 'cosmetology',
+      name: 'Cosmetology & Beauty',
+      description: 'Professional training in hair, makeup, and skincare services.',
+      icon: '💄',
+      badge: 'Offline program'
+    },
+    {
+      id: 'electrical',
+      name: 'Electrical Installation',
+      description: 'Build expertise in residential and commercial electrical systems.',
+      icon: '⚡',
+      badge: 'Hands-on training'
+    },
+    {
+      id: 'carpentry',
+      name: 'Carpentry & Joinery',
+      description: 'Develop woodworking skills for furniture making and construction.',
+      icon: '🪚',
+      badge: 'Beginner-friendly'
+    },
+    {
+      id: 'catering',
+      name: 'Catering & Food Service',
+      description: 'Learn professional cooking and food preparation for events and business.',
+      icon: '🍳',
+      badge: 'Offline program'
+    }
+  ];
+
   return (
-    <main>
-      <section className={styles.topSection}>
-        <div className={styles.overlay}>
-          <h1 className={styles.title}>Oyo Campus</h1>
+    <main className={styles.main}>
+      {/* Hero Section */}
+      <section className={styles.hero}>
+        <div className={styles.heroOverlay}>
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>Oyo Campus</h1>
+          </div>
         </div>
       </section>
-      <section className={styles.aboutSection}>
+
+      {/* About Section */}
+      <section className={styles.section}>
         <div className={styles.container}>
-          <h2 className={styles.subtitle}>About Oyo Campus</h2>
-          <p className={styles.aboutText}>This is a temporary description of the Oyo Campus. Located in the vibrant Oyo State, this campus is committed to delivering top-notch skill acquisition programs. Stay tuned for more details about our facilities, courses, and community impact!</p>
+          <div className={styles.content}>
+            <h2 className={styles.heading}>About Oyo Campus</h2>
+            <p className={styles.description}>
+              Located in the bustling heart of Lagos, this campus is dedicated to providing top-tier skill acquisition programs. Stay tuned for more details about our facilities, courses, and community impact.
+            </p>
+          </div>
         </div>
       </section>
-      <section className={styles.coursesSection}>
-        <div className={styles.coursesContainer}>
-          <h2 className={styles.subtitle}>Courses Available</h2>
-          <ul className={styles.coursesList}>
-            <li>Digital Marketing Mastery</li>
-            <li>Coding Bootcamp (Python & JavaScript)</li>
-            <li>Graphic Design Fundamentals</li>
-            <li>Entrepreneurship 101</li>
-            <li>Public Speaking Skills</li>
-          </ul>
-        </div>
-      </section>
-      <section className={styles.eventsSection}>
-        <div className={styles.container}>
-          <h2 className={styles.subtitle}>Upcoming Events</h2>
-          <ul className={styles.eventsList}>
-            <li>Skill Expo 2025 - Aug 15, 2025</li>
-            <li>Coding Workshop - Aug 20, 2025</li>
-            <li>Entrepreneurship Talk - Aug 25, 2025</li>
-          </ul>
-        </div>
-      </section>
+
+      <FeaturedSkills skills={featuredSkills} />
+
+      <UpcomingEvents />
     </main>
   );
-}
+};
+
+export default OyoCampus;

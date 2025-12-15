@@ -1,63 +1,196 @@
 'use client';
 
-import Image from 'next/image';
-import { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './style.module.css';
 
-export default function PictureGallery() {
-  const images = [
-    '/image1.jpg',
-    '/image2.jpg',
-    '/image3.jpg',
-    '/image4.jpg',
-    '/image5.jpg',
-    '/image6.jpg',
-    '/image7.jpg',
-    '/image8.jpg',
-    '/image9.jpg',
-    '/image10.jpg',
-    '/image11.jpg',
-    '/image12.jpg',
-    '/image13.jpg',
-  ];
+interface GalleryImage {
+  id: number;
+  src: string;
+  category: 'training' | 'events' | 'outreach';
+  alt: string;
+}
 
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const carouselRef = useRef<HTMLDivElement>(null);
+type FilterCategory = 'all' | 'training' | 'events' | 'outreach';
 
-  const openLightbox = (src: string) => {
-    setSelectedImage(src);
+const Gallery: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+  const [filter, setFilter] = useState<FilterCategory>('all');
+  const [visibleCount, setVisibleCount] = useState<number>(12);
+
+  const images: GalleryImage[] = Array.from({ length: 67 }, (_, i) => {
+    const id = i + 1;
+    const categories: Array<'training' | 'events' | 'outreach'> = ['training', 'events', 'outreach'];
+    const category = categories[i % 3];
+    
+    return {
+      id,
+      src: `/gallery/${id}.jpg`,
+      category,
+      alt: `Program image ${id}`
+    };
+  });
+
+  const filteredImages = filter === 'all' 
+    ? images 
+    : images.filter(img => img.category === filter);
+
+  const displayedImages = filteredImages.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredImages.length;
+
+  const openLightbox = (image: GalleryImage): void => {
+    setSelectedImage(image);
+    document.body.style.overflow = 'hidden';
   };
 
-  const closeLightbox = () => {
+  const closeLightbox = (): void => {
     setSelectedImage(null);
+    document.body.style.overflow = 'unset';
   };
+
+  const navigateImage = (direction: 'next' | 'prev'): void => {
+    if (!selectedImage) return;
+
+    const currentIndex = filteredImages.findIndex(img => img.id === selectedImage.id);
+    let newIndex: number;
+    
+    if (direction === 'next') {
+      newIndex = (currentIndex + 1) % filteredImages.length;
+    } else {
+      newIndex = (currentIndex - 1 + filteredImages.length) % filteredImages.length;
+    }
+    
+    setSelectedImage(filteredImages[newIndex]);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent): void => {
+      if (!selectedImage) return;
+      
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') navigateImage('next');
+      if (e.key === 'ArrowLeft') navigateImage('prev');
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage, filteredImages]);
+
+  const filterCategories: FilterCategory[] = ['all', 'training', 'events', 'outreach'];
 
   return (
-    <main className={styles.main}>
-      <section className={styles.hero}>
-        <Image src="/image7.jpg" alt="Hero Background of Skill Acquisition" fill className={styles.heroImage} />
-        <div className={styles.heroOverlay}>
-          <h1 className={styles.heroTitle}>Picture Gallery</h1>
-        </div>
-      </section>
-      <section className={styles.carouselSection}>
-        <h2 className={styles.sectionTitle}>Explore Our Visual Journey</h2>
-        <div className={styles.carouselWrapper} ref={carouselRef}>
-          <div className={styles.carousel}>
-            {images.map((src, index) => (
-              <div key={index} className={styles.carouselItem} onClick={() => openLightbox(src)}>
-                <Image src={src} alt={`Skill Acquisition Moment ${index + 1}`} width={400} height={300} className={styles.carouselImage} />
-              </div>
+    <div className={styles.container}>
+      {/* Header */}
+      <header className={styles.header}>
+        <h1 className={styles.title}>Gallery</h1>
+        <p className={styles.subtitle}>
+          Moments from training sessions, events, and activities.
+        </p>
+      </header>
+
+      {/* Filter Bar - Only shown if needed */}
+      {images.length > 12 && (
+        <div className={styles.filterWrapper}>
+          <div className={styles.filterBar}>
+            {filterCategories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => {
+                  setFilter(cat);
+                  setVisibleCount(12);
+                }}
+                className={`${styles.filterButton} ${filter === cat ? styles.filterButtonActive : ''}`}
+              >
+                {cat === 'all' ? 'All' : cat.charAt(0).toUpperCase() + cat.slice(1)}
+              </button>
             ))}
           </div>
         </div>
-      </section>
+      )}
+
+      {/* Image Grid */}
+      <main className={styles.main}>
+        <div className={styles.grid}>
+          {displayedImages.map((image) => (
+            <button
+              key={image.id}
+              onClick={() => openLightbox(image)}
+              className={styles.gridItem}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                className={styles.gridImage}
+              />
+            </button>
+          ))}
+        </div>
+
+        {/* Load More */}
+        {hasMore && (
+          <div className={styles.loadMoreWrapper}>
+            <button
+              onClick={() => setVisibleCount(prev => prev + 12)}
+              className={styles.loadMoreButton}
+            >
+              Load More
+            </button>
+          </div>
+        )}
+      </main>
+
+      {/* Lightbox */}
       {selectedImage && (
         <div className={styles.lightbox} onClick={closeLightbox}>
-          <Image src={selectedImage} alt="Full view of Skill Moment" width={800} height={600} className={styles.fullImage} />
-          <button className={styles.closeButton} onClick={closeLightbox}>×</button>
+          {/* Close Button */}
+          <button
+            onClick={closeLightbox}
+            className={styles.closeButton}
+            aria-label="Close lightbox"
+          >
+            <X size={20} />
+          </button>
+
+          {/* Previous Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              navigateImage('prev');
+            }}
+            className={styles.prevButton}
+            aria-label="Previous image"
+          >
+            <ChevronLeft size={24} />
+          </button>
+
+          {/* Next Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              navigateImage('next');
+            }}
+            className={styles.nextButton}
+            aria-label="Next image"
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          {/* Image */}
+          <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className={styles.lightboxImage}
+            />
+            <p className={styles.lightboxCaption}>
+              {selectedImage.alt}
+            </p>
+          </div>
         </div>
       )}
-    </main>
+    </div>
   );
-}
+};
+
+export default Gallery;

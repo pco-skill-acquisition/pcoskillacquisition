@@ -1,41 +1,87 @@
+import React from 'react';
 import styles from './style.module.css';
+import UpcomingEvents from '@/sections/upcoming/UpcomingEvents';
+import FeaturedSkills from '@/sections/featured/FeaturedSkills';
 
-export default function ApapaCampus() {
+const ApapaCampus: React.FC = () => {
+  const featuredSkills = [
+    {
+      id: 'tailoring',
+      name: 'Tailoring & Fashion Design',
+      description: 'Learn garment construction and clothing production for income or employment.',
+      icon: '✂️',
+      badge: 'Beginner-friendly'
+    },
+    {
+      id: 'welding',
+      name: 'Welding & Metalwork',
+      description: 'Master welding techniques for construction and manufacturing careers.',
+      icon: '🔧',
+      badge: 'Hands-on training'
+    },
+    {
+      id: 'cosmetology',
+      name: 'Cosmetology & Beauty',
+      description: 'Professional training in hair, makeup, and skincare services.',
+      icon: '💄',
+      badge: 'Offline program'
+    },
+    {
+      id: 'electrical',
+      name: 'Electrical Installation',
+      description: 'Build expertise in residential and commercial electrical systems.',
+      icon: '⚡',
+      badge: 'Hands-on training'
+    },
+    {
+      id: 'carpentry',
+      name: 'Carpentry & Joinery',
+      description: 'Develop woodworking skills for furniture making and construction.',
+      icon: '🪚',
+      badge: 'Beginner-friendly'
+    },
+    {
+      id: 'catering',
+      name: 'Catering & Food Service',
+      description: 'Learn professional cooking and food preparation for events and business.',
+      icon: '🍳',
+      badge: 'Offline program'
+    }
+  ];
+
+
   return (
-    <main>
-      <section className={styles.topSection}>
-        <div className={styles.overlay}>
-          <h1 className={styles.title}>Apapa Campus</h1>
+    <main className={styles.main}>
+      {/* Hero Section */}
+      <section className={styles.hero}>
+        <div className={styles.heroOverlay}>
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>Apapa Campus</h1>
+          </div>
         </div>
       </section>
-      <section className={styles.aboutSection}>
+
+      {/* About Section */}
+      <section className={styles.section}>
         <div className={styles.container}>
-          <h2 className={styles.subtitle}>About Apapa Campus</h2>
-          <p className={styles.aboutText}>This is a temporary description of the Apapa Campus. Located in the bustling heart of Lagos, this campus is dedicated to providing top-tier skill acquisition programs. Stay tuned for more details about our facilities, courses, and community impact!</p>
+          <div className={styles.content}>
+            <h2 className={styles.heading}>About Apapa Campus</h2>
+            <p className={styles.description}>
+              Apapa is a well-known community in Lagos with a diverse population, where many residents, particularly youths and women, face economic limitations, underemployment, and limited access to practical skill training despite living within a commercial hub.
+              Pastor Chris Skill Acquisition established its Apapa campus as a strategic response to these realities, bringing structured empowerment and opportunity directly into the community. Since our launch in 2023, the campus has served as a center of transformation, providing free, hands-on training that equips individuals with market-relevant and income-generating skills.
+              From inception to date, the Apapa campus has empowered over 3,200 individuals, training participants in skills such as Graphic Design, Hair Dressing, Bakery, Tailoring, and other vocational and digital programs designed to promote self-reliance and economic stability.
+              In addition to skills training, we are committed to holistic development. Participants are taught the Word of God, introduced to the gospel, and invited into church fellowship. A number of those trained have remained connected, becoming active members of the church and undergoing intentional discipleship that supports both their spiritual and personal growth.
+              The Apapa campus continues to stand as a powerful expression of practical love, equipping individuals with skills, restoring hope, and raising purpose-driven men and women who are empowered to impact their families and communities.
+            </p>
+          </div>
         </div>
       </section>
-      <section className={styles.coursesSection}>
-        <div className={styles.coursesContainer}>
-          <h2 className={styles.subtitle}>Courses Available</h2>
-          <ul className={styles.coursesList}>
-            <li>Digital Marketing Mastery</li>
-            <li>Coding Bootcamp (Python & JavaScript)</li>
-            <li>Graphic Design Fundamentals</li>
-            <li>Entrepreneurship 101</li>
-            <li>Public Speaking Skills</li>
-          </ul>
-        </div>
-      </section>
-      <section className={styles.eventsSection}>
-        <div className={styles.container}>
-          <h2 className={styles.subtitle}>Upcoming Events</h2>
-          <ul className={styles.eventsList}>
-            <li>Skill Expo 2025 - Aug 15, 2025</li>
-            <li>Coding Workshop - Aug 20, 2025</li>
-            <li>Entrepreneurship Talk - Aug 25, 2025</li>
-          </ul>
-        </div>
-      </section>
+
+      <FeaturedSkills skills={featuredSkills} />
+
+      <UpcomingEvents />
     </main>
   );
-}
+};
+
+export default ApapaCampus;

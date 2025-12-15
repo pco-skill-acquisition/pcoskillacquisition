@@ -2,6 +2,8 @@ import Navbar from './components/Navbar';
 import './globals.css';
 import type { Metadata } from 'next';
 import Footer from './components/Footer';
+import { ApplyModalProvider } from './context/ApplyModalContext';
+import ApplyModalWrapper from './components/ApplyModalWrapper';
 
 export const metadata: Metadata = {
   title: 'PCO Skill Acquisition',
@@ -16,9 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main className="container">{children}</main>
-        <Footer />
+        <ApplyModalProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <ApplyModalWrapper />
+        </ApplyModalProvider>
       </body>
     </html>
   );

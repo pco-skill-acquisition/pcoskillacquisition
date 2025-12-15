@@ -1,40 +1,107 @@
+'use client';
+
 import Image from 'next/image';
 import styles from './Footer.module.css';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleAboutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    if (pathname === '/') {
+      // Already on homepage, just scroll to section
+      const element = document.querySelector('#about');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // Navigate to homepage with hash
+      router.push('/#about');
+    }
+  };
+
   return (
-    <footer className={styles.footerContainer}>
-      <div className={styles.logoSection}>
-        <Link href="/">
-          <Image src="/logo.png" alt="PCO Skill Acquisition Logo" width={50} height={50} className={styles.logo} />
-        </Link>
-        <p className={styles.programText}>PCO Skill Acquisition Program</p>
-        <div className={styles.socialSection}>
-          <a href="https://kingschat.online/user/ce_bigchurch" target="_blank" rel="noopener noreferrer">
-            <Image src="/kingschat-logo.png" alt="KingsChat" width={30} height={30} className={styles.socialIcon} />
-          </a>
-          <a href="https://www.instagram.com/pco_skill_acquisition_program/" target="_blank" rel="noopener noreferrer">
-            <Image src="/instagram-logo.png" alt="Instagram" width={30} height={30} className={styles.socialIcon} />
-          </a>
-          <a href="tel:+1234567890">
-            <Image src="/phone-icon.png" alt="Phone" width={30} height={30} className={styles.socialIcon} style={{ filter: 'brightness(0) invert(1)' }} />
-          </a>
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {/* Brand Section */}
+          <div className={styles.brandSection}>
+            <Link href="/" className={styles.logoLink}>
+              <Image
+                src="/logo.png"
+                alt="PCO Skill Acquisition Logo"
+                width={40}
+                height={40}
+                className={styles.logo}
+              />
+              <span className={styles.brandName}>PCO Skill Acquisition</span>
+            </Link>
+            <p className={styles.tagline}>
+              Empowering individuals with practical skills for a better future.
+            </p>
+          </div>
+
+          {/* Links Section */}
+          <div className={styles.linksSection}>
+            <div className={styles.linkColumn}>
+              <h4 className={styles.columnTitle}>Quick Links</h4>
+              <nav className={styles.linkList}>
+                <Link href="/#about" className={styles.link} onClick={handleAboutClick}>About Us</Link>
+                <Link href="/picture-gallery" className={styles.link}>Gallery</Link>
+                <Link href="/contact-us" className={styles.link}>Contact</Link>
+              </nav>
+            </div>
+
+            <div className={styles.linkColumn}>
+              <h4 className={styles.columnTitle}>Campuses</h4>
+              <nav className={styles.linkList}>
+                <Link href="/campus/apapa" className={styles.link}>Apapa</Link>
+                <Link href="/campus/ilasa" className={styles.link}>Ilasa</Link>
+                <Link href="/campus/kano" className={styles.link}>Kano</Link>
+                <Link href="/campus/warri" className={styles.link}>Warri</Link>
+                <Link href="/campus/oyo" className={styles.link}>Oyo</Link>
+              </nav>
+            </div>
+
+            <div className={styles.linkColumn}>
+              <h4 className={styles.columnTitle}>Connect</h4>
+              <div className={styles.socialLinks}>
+                <a
+                  href="https://kingschat.online/user/ce_bigchurch"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label="KingsChat"
+                >
+                  <Image src="/kingschat-logo.png" alt="" width={20} height={20} />
+                  <span>KingsChat</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/pco_skill_acquisition_program/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label="Instagram"
+                >
+                  <Image src="/instagram-logo.png" alt="" width={20} height={20} />
+                  <span>Instagram</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className={styles.visitSection}>
-        <h3 className={styles.visitTitle}>Visit</h3>
-        <ul className={styles.campusList}>
-          <li><Link href="/campus/apapa">Apapa Campus</Link></li>
-          <li><Link href="/campus/ilasa">Ilasa Campus</Link></li>
-          <li><Link href="/campus/kano">Kano Campus</Link></li>
-          <li><Link href="/campus/warri">Warri Campus</Link></li>
-          <li><Link href="/campus/oyo">Oyo Campus</Link></li>
-          <li><Link href="/campus/secondary-school">Secondary School Campuses</Link></li>
-        </ul>
-      </div>
-      <div className={styles.copyrightSection}>
-        <p>© 2025 PCO Skill Acquisition.</p>
+
+        {/* Bottom Bar */}
+        <div className={styles.bottomBar}>
+          <p className={styles.copyright}>
+            © {currentYear} PCO Skill Acquisition. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

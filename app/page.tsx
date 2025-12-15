@@ -2,79 +2,89 @@
 
 import styles from './homepage.module.css';
 import { useEffect } from 'react';
-import Link from 'next/link';
+import Hero from '@/sections/hero/hero';
+import FeaturedSkills from '@/sections/featured/FeaturedSkills';
+import HowItWorksSection from '@/sections/howItWorks/HowItWorksSection';
+import AboutFoundation from '@/sections/about/AboutFoundation';
+import Testimonials from '@/sections/testimonials/Testimonials';
+import UpcomingEvents from '@/sections/upcoming/UpcomingEvents';
 
 export default function Home() {
   useEffect(() => {
     const section = document.querySelector(`.${styles.topSection}`);
     if (section) section.classList.add(styles.fadeIn);
+
+    const hash = window.location.hash;
+    if (hash) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+
+      const scrollToSection = () => {
+        const element = document.querySelector(hash) as HTMLElement;
+        if (element) {
+          const offsetTop = element.offsetTop - 80;
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        }
+      };
+
+      requestAnimationFrame(() => {
+        setTimeout(scrollToSection, 100);
+      });
+    }
   }, []);
+
+  const featuredSkills = [
+    {
+      id: 'tailoring',
+      name: 'Tailoring & Fashion Design',
+      description: 'Learn garment construction and clothing production for income or employment.',
+      icon: '✂️',
+      badge: 'Beginner-friendly'
+    },
+    {
+      id: 'welding',
+      name: 'Welding & Metalwork',
+      description: 'Master welding techniques for construction and manufacturing careers.',
+      icon: '🔧',
+      badge: 'Hands-on training'
+    },
+    {
+      id: 'cosmetology',
+      name: 'Cosmetology & Beauty',
+      description: 'Professional training in hair, makeup, and skincare services.',
+      icon: '💄',
+      badge: 'Offline program'
+    },
+    {
+      id: 'electrical',
+      name: 'Electrical Installation',
+      description: 'Build expertise in residential and commercial electrical systems.',
+      icon: '⚡',
+      badge: 'Hands-on training'
+    },
+    {
+      id: 'carpentry',
+      name: 'Carpentry & Joinery',
+      description: 'Develop woodworking skills for furniture making and construction.',
+      icon: '🪚',
+      badge: 'Beginner-friendly'
+    },
+    {
+      id: 'catering',
+      name: 'Catering & Food Service',
+      description: 'Learn professional cooking and food preparation for events and business.',
+      icon: '🍳',
+      badge: 'Offline program'
+    }
+  ];
 
   return (
     <main>
-      <section className={styles.topSection}>
-        <div className={styles.overlay}>
-          <h1 className={styles.title}>Pastor Chris Oyakhilome<br />Skill Acquisition</h1>
-          <div className={styles.buttonContainer}>
-            <Link href="/contact-us" passHref>
-              <button className={styles.registerButton}>Register Now</button>
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className={styles.skillsSection}>
-        <h2 className={styles.sectionTitle}>Featured Skills</h2>
-        <div className={styles.skillsGrid}>
-          <div className={styles.skillCard}>
-            <span className={styles.skillIcon}>🎨</span>
-            <h3>Graphic Design</h3>
-            <p>Master digital art and branding.</p>
-          </div>
-          <div className={styles.skillCard}>
-            <span className={styles.skillIcon}>💻</span>
-            <h3>Web Development</h3>
-            <p>Build modern websites with ease.</p>
-          </div>
-          <div className={styles.skillCard}>
-            <span className={styles.skillIcon}>🎵</span>
-            <h3>Music Production</h3>
-            <p>Create beats and tracks like a pro.</p>
-          </div>
-        </div>
-      </section>
-      <section className={styles.aboutSection}>
-        <h2 className={styles.sectionTitle}>About Us</h2>
-        <p className={styles.aboutText}>We’re dedicated to empowering Nigeria’s youth with top-notch skill training under the vision of Pastor Chris Oyakhilome. Join us to unlock your potential!</p>
-        <Link href="/our-vision" passHref>
-          <button className={styles.learnMoreButton}>Learn More</button>
-        </Link>
-      </section>
-      <section className={styles.eventsSection}>
-        <h2 className={styles.sectionTitle}>Upcoming Events</h2>
-        <div className={styles.eventsGrid}>
-          <div className={styles.eventCard}>
-            <h3>Skill Bootcamp</h3>
-            <p>Aug 30, 2025 - Lagos Campus</p>
-          </div>
-          <div className={styles.eventCard}>
-            <h3>Webinar Series</h3>
-            <p>Sep 5, 2025 - Online</p>
-          </div>
-        </div>
-      </section>
-      <section className={styles.testimonialsSection}>
-        <h2 className={styles.sectionTitle}>What They Say</h2>
-        <div className={styles.testimonialCarousel}>
-          <div className={styles.testimonialCard}>
-            <p>“This program changed my life—now I’m a web dev guru!”</p>
-            <span>- Tunde, Lagos</span>
-          </div>
-          <div className={styles.testimonialCard}>
-            <p>“Amazing skills training, highly recommend!”</p>
-            <span>- Chioma, Warri</span>
-          </div>
-        </div>
-      </section>
+      <Hero />
+      <FeaturedSkills skills={featuredSkills} />
+      <HowItWorksSection />
+      <AboutFoundation />
+      <Testimonials />
+      <UpcomingEvents />
     </main>
   );
 }
