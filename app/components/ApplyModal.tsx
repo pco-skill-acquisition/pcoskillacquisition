@@ -200,7 +200,7 @@ export default function ApplyModal({ isOpen, onClose, prefilledSkill = '' }: App
               onChange={handleChange}
               className={styles.textarea}
               rows={4}
-              placeholder="Tell us why you're interested in this skill..."
+              placeholder="Tell us why you&apos;re interested in this skill..."
             />
           </div>
 
